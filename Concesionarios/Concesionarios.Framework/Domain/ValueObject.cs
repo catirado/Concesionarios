@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Concesionarios.Infrastructure.Data
+namespace Concesionarios.Framework.Domain
 {
-    public class Class1
+    public class ValueObject
     {
     }
 }

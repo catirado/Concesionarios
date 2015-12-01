@@ -1,19 +1,18 @@
-﻿using System;
+﻿using Concesionarios.Framework.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace Concesionarios.Domain
 {
-    public class Presupuesto
+    public class Presupuesto : Entity
     {
-        public int Id { get; private set; }
         public string Estado { get; private set; }
         public double Importe { get; private set; }
+        private Presupuesto _presupuesto;
+        private Cliente _cliente;
 
-        public Presupuesto()
-        {
 
-        }
     }
 }

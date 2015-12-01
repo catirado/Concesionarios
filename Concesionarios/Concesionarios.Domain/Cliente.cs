@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Concesionarios.Framework.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace Concesionarios.Domain
 {
-    public class Cliente
+    public class Cliente : Entity
     {
-        public int Id { get; private set; }
         public string Nombre { get; private set; }
         public string Apellidos { get; private set; }
         public string Telefono { get; private set; }
