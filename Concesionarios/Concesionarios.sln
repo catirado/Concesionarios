@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Concesionarios.Services.DTO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Concesionarios.Infrastructure.Data.ADO", "Concesionarios.Infrastructure.Data.ADO\Concesionarios.Infrastructure.Data.ADO.csproj", "{AFB8C5A5-36DB-4335-A5E1-7C7467D780DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Concesionarios.UI.Web", "Concesionarios.UI.Web\Concesionarios.UI.Web.csproj", "{204D2B56-9827-4BEC-ACEA-EB4C69102289}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{AFB8C5A5-36DB-4335-A5E1-7C7467D780DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFB8C5A5-36DB-4335-A5E1-7C7467D780DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFB8C5A5-36DB-4335-A5E1-7C7467D780DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{204D2B56-9827-4BEC-ACEA-EB4C69102289}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{204D2B56-9827-4BEC-ACEA-EB4C69102289}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{204D2B56-9827-4BEC-ACEA-EB4C69102289}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{204D2B56-9827-4BEC-ACEA-EB4C69102289}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,5 +91,6 @@ Global
 		{C136E405-CADD-4A0F-BF04-86259E176820} = {029F4629-4B82-4392-BB04-E7C95BDDC163}
 		{E8E22963-E90E-42C0-9A74-1335CA65B71A} = {69DC2936-AEF1-49BA-AD78-94050CCF5A8C}
 		{AFB8C5A5-36DB-4335-A5E1-7C7467D780DC} = {029F4629-4B82-4392-BB04-E7C95BDDC163}
+		{204D2B56-9827-4BEC-ACEA-EB4C69102289} = {1784645C-DAF1-456B-8CEE-3DD8A462891C}
 	EndGlobalSection
 EndGlobal
