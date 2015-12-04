@@ -47,6 +47,10 @@
       <Project>{1afe3b4c-757b-4f9e-becd-8d00f2371f94}</Project>
       <Name>Concesionarios.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Concesionarios.Framework\Concesionarios.Framework.csproj">
+      <Project>{ae06aa0d-b016-4f5d-98d5-30b8591aec43}</Project>
+      <Name>Concesionarios.Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
