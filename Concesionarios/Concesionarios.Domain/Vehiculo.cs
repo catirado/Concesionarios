@@ -13,23 +13,6 @@ namespace Concesionarios.Domain
         public string Modelo { get; private set; }
         public int Potencia { get; private set; }
 
-        private IList<Presupuesto> _presupuestos;
-
-        public IList<Presupuesto> Presupuestos
-        {
-            get
-            {
-                if (_presupuestos == null)
-                    _presupuestos = new List<Presupuesto>();
-
-                return _presupuestos;
-            }
-            set
-            {
-                _presupuestos = new List<Presupuesto>(value);
-            }
-        }
-
         //mejor meter una factoria
         public Vehiculo()
         {

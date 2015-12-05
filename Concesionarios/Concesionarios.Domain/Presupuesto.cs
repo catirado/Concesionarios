@@ -13,6 +13,5 @@ namespace Concesionarios.Domain
         private Presupuesto _presupuesto;
         private Cliente _cliente;
 
-
     }
 }

@@ -11,5 +11,6 @@ namespace Concesionarios.Infrastructure.Data.ADO
     public class ClienteRepository : IClienteRepository
     {
 
+
     }
 }

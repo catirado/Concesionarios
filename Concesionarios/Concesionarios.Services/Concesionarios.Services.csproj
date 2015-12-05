@@ -39,8 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientesService.cs" />
+    <Compile Include="IClientesService.cs" />
     <Compile Include="IVentasService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VentasService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Concesionarios.Domain\Concesionarios.Domain.csproj">
