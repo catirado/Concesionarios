@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Concesionarios.Framework.Domain
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
-
+        void Commit();
+        void Rollback();
     }
 }
