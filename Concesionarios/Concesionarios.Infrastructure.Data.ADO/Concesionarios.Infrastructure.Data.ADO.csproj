@@ -39,7 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClienteRepository.cs" />
+    <Compile Include="ADORepository.cs" />
+    <Compile Include="ADOUnitOfWork.cs" />
+    <Compile Include="ADOUnitOfWorkFactory.cs" />
+    <Compile Include="Repositories\ClienteRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -51,6 +54,9 @@
       <Project>{ae06aa0d-b016-4f5d-98d5-30b8591aec43}</Project>
       <Name>Concesionarios.Framework</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Mappings\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
