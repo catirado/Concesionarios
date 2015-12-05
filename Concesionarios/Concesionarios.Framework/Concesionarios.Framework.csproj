@@ -42,6 +42,7 @@
     <Compile Include="Domain\Entity.cs" />
     <Compile Include="Domain\IRepository.cs" />
     <Compile Include="Domain\IUnitOfWork.cs" />
+    <Compile Include="Domain\IUnitOfWorkFactory.cs" />
     <Compile Include="Domain\ValueObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
