@@ -9,10 +9,10 @@ namespace Concesionarios.Domain
 {
     public class Cliente : Entity
     {
-        public string Nombre { get; private set; }
-        public string Apellidos { get; private set; }
-        public string Telefono { get; private set; }
-        public bool Vip { get; private set; }
+        public string Nombre { get; set; }
+        public string Apellidos { get; set; }
+        public string Telefono { get; set; }
+        public bool Vip { get; set; }
 
         private IList<Presupuesto> _presupuestos;
 

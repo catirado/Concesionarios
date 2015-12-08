@@ -8,6 +8,6 @@ namespace Concesionarios.Services.DTO
 {
     public class ClienteDTO
     {
-
+        
     }
 }

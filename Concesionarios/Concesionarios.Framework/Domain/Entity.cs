@@ -8,6 +8,6 @@ namespace Concesionarios.Framework.Domain
 {
     public abstract class Entity
     {
-        public int Id { get; private set; }
+        public int Id { get; set; }
     }
 }

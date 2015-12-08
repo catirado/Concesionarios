@@ -55,6 +55,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Concesionarios.Domain\Concesionarios.Domain.csproj">
+      <Project>{1afe3b4c-757b-4f9e-becd-8d00f2371f94}</Project>
+      <Name>Concesionarios.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Concesionarios.Framework\Concesionarios.Framework.csproj">
+      <Project>{ae06aa0d-b016-4f5d-98d5-30b8591aec43}</Project>
+      <Name>Concesionarios.Framework</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Concesionarios.Infrastructure.Data.ADO\Concesionarios.Infrastructure.Data.ADO.csproj">
       <Project>{afb8c5a5-36db-4335-a5e1-7c7467d780dc}</Project>
       <Name>Concesionarios.Infrastructure.Data.ADO</Name>

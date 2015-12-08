@@ -41,10 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ADOConfiguration.cs" />
+    <Compile Include="ADORepository.cs" />
     <Compile Include="ADOUnitOfWork.cs" />
     <Compile Include="ADOUnitOfWorkFactory.cs" />
     <Compile Include="Repositories\ClienteRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\VehiculoRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Concesionarios.Domain\Concesionarios.Domain.csproj">
