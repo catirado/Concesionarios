@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,6 +50,14 @@
     <ProjectReference Include="..\Concesionarios.Domain\Concesionarios.Domain.csproj">
       <Project>{1afe3b4c-757b-4f9e-becd-8d00f2371f94}</Project>
       <Name>Concesionarios.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Concesionarios.Framework\Concesionarios.Framework.csproj">
+      <Project>{ae06aa0d-b016-4f5d-98d5-30b8591aec43}</Project>
+      <Name>Concesionarios.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Concesionarios.Services.DTO\Concesionarios.Services.DTO.csproj">
+      <Project>{e8e22963-e90e-42c0-9a74-1335ca65b71a}</Project>
+      <Name>Concesionarios.Services.DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
