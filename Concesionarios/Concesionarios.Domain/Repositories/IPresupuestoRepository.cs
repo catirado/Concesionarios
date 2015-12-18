@@ -9,6 +9,6 @@ namespace Concesionarios.Domain.Repositories
 {
     public interface IPresupuestoRepository : IRepository<Presupuesto>
     {
-
+        IList<Presupuesto> FindAllPresupuestosForCliente(Cliente cliente);
     }
 }

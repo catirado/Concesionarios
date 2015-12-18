@@ -10,8 +10,8 @@ namespace Concesionarios.Domain
     public class Vehiculo : Entity
     {
         public string Marca { get; set; }
-        public string Modelo { get; private set; }
-        public int Potencia { get; private set; }
+        public string Modelo { get; set; }
+        public int Potencia { get; set; }
 
         //mejor meter una factoria
         public Vehiculo()
