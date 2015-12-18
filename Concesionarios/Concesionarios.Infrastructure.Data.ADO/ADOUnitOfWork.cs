@@ -16,9 +16,7 @@ namespace Concesionarios.Infrastructure.Data.ADO
     //http://codereview.stackexchange.com/questions/77610/reusable-unit-of-work-interface-factory
     public class ADOUnitOfWork : IUnitOfWork
     {
-
         private bool disposed = false;
-
         private readonly TransactionScope transactionScope;
 
         public ADOUnitOfWork(System.Transactions.IsolationLevel isolationLevel)

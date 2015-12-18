@@ -18,7 +18,7 @@ namespace Concesionarios.Infrastructure.Data.ADO
 
         public void Setup()
         {
-            //this can be nothing
+            //this can be empty
         }
 
         public string ConnectionString

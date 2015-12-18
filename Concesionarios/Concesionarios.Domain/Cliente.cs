@@ -14,23 +14,6 @@ namespace Concesionarios.Domain
         public string Telefono { get; set; }
         public bool Vip { get; set; }
 
-        private IList<Presupuesto> _presupuestos;
-
-        public IList<Presupuesto> Presupuestos
-        {
-            get
-            {
-                if (_presupuestos == null)
-                    _presupuestos = new List<Presupuesto>();
-
-                return _presupuestos;
-            }
-            set
-            {
-                _presupuestos = new List<Presupuesto>(value);
-            }
-        }
-
         public Cliente()
         {
 
