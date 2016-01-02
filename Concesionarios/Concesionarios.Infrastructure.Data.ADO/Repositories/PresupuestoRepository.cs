@@ -9,37 +9,41 @@ using System.Threading.Tasks;
 
 namespace Concesionarios.Infrastructure.Data.ADO.Repositories
 {
-    public class VehiculoRepository : ADORepository<Vehiculo>, IVehiculoRepository
+    public class PresupuestoRepository : ADORepository<Presupuesto>, IPresupuestoRepository
     {
-        public VehiculoRepository(IDBConfiguration configuration) : base(configuration) { }
+        public PresupuestoRepository(IDBConfiguration configuration) : base(configuration) { }
 
-        public void Add(Vehiculo entity)
+        public IList<Presupuesto> FindAllPresupuestosForCliente(Cliente cliente)
         {
             throw new NotImplementedException();
         }
 
-        public void Remove(Vehiculo entity)
+        public void Add(Presupuesto entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Vehiculo entity)
+        public void Remove(Presupuesto entity)
         {
             throw new NotImplementedException();
         }
 
-        public Vehiculo Get(int id)
+        public void Update(Presupuesto entity)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Vehiculo> GetAll()
+        public Presupuesto Get(int id)
         {
             throw new NotImplementedException();
         }
 
+        public IEnumerable<Presupuesto> GetAll()
+        {
+            throw new NotImplementedException();
+        }
 
-        protected override Vehiculo Map(System.Data.IDataRecord record)
+        protected override Presupuesto Map(System.Data.IDataRecord record)
         {
             throw new NotImplementedException();
         }

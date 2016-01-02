@@ -60,8 +60,8 @@ namespace Concesionarios.Infrastructure.Data.ADO.Repositories
                 connection.Open();
                 using (var command = connection.CreateCommand())
                 {
-                    command.CommandText = "UPDATE Clientes SET Nombre = @nombre, Apellidos = @apellidos, ) "
-                                          + "Telefono = @telefono, Vip=@vip)";
+                    command.CommandText = "UPDATE Clientes SET Nombre = @nombre, Apellidos = @apellidos,  "
+                                          + "Telefono = @telefono, Vip=@vip";
                     command.Parameters.AddWithValue("@nombre", entity.Nombre);
                     command.Parameters.AddWithValue("@apellidos", entity.Apellidos);
                     command.Parameters.AddWithValue("@telefono", entity.Telefono);
@@ -99,18 +99,14 @@ namespace Concesionarios.Infrastructure.Data.ADO.Repositories
             }
         }
 
-        public IList<Presupuesto> FindAllPresupuestosForCliente(Cliente cliente)
+        protected override Cliente Map(IDataRecord record)
         {
-            throw new NotImplementedException();
-        }
-
-        protected override void Map(IDataRecord record, Cliente user)
-        {
-            user.Id = (int)record["Id"];
-            user.Apellidos = (string)record["Apellidos"];
-            user.Nombre = (string)record["Nombre"];
-            user.Telefono = (string)record["Telefono"];
-            user.Vip = (bool)record["Vip"];
+            return new Cliente(
+                (int)record["Id"],
+                (string)record["Nombre"],
+                (string)record["Apellidos"],
+                (string)record["Telefono"],
+                (bool)record["Vip"]);
         }
     }
 }

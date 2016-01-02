@@ -1,4 +1,5 @@
 ﻿using Concesionarios.Framework.Database;
+using Concesionarios.Framework.Domain;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Concesionarios.Infrastructure.Data.ADO
 {
-    public abstract class ADORepository<TEntity> where TEntity : new()
+    public abstract class ADORepository<TEntity> where TEntity : Entity
     {
         protected readonly string _connectionString;
 
@@ -24,14 +25,13 @@ namespace Concesionarios.Infrastructure.Data.ADO
                 List<TEntity> items = new List<TEntity>();
                 while (reader.Read())
                 {
-                    var item = new TEntity();
-                    Map(reader, item);
+                    var item = Map(reader);
                     items.Add(item);
                 }
                 return items;
             }
         }
 
-        protected abstract void Map(IDataRecord record, TEntity entity);
+        protected abstract TEntity Map(IDataRecord record);
     }
 }

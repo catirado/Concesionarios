@@ -46,6 +46,7 @@
     <Compile Include="ADOUnitOfWorkFactory.cs" />
     <Compile Include="Repositories\ClienteRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\PresupuestoRepository.cs" />
     <Compile Include="Repositories\VehiculoRepository.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -8,9 +8,9 @@ namespace Concesionarios.Domain
 {
     public class Presupuesto : Entity
     {
-        public string Estado { get; set; }
-        public double Importe { get; set; }
-        private Vehiculo Vehiculo { get; set; }
-        private Cliente Cliente { get; set; }
+        public string Estado { get; private set; }
+        public double Importe { get; private set; }
+        public Vehiculo Vehiculo { get; private set; }
+        public Cliente Cliente { get; private set; }
     }
 }

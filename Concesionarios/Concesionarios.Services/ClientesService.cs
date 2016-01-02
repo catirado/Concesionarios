@@ -24,13 +24,32 @@ namespace Concesionarios.Services
             _clienteRepository = clienteRepository;
         }
 
-        public void AddCliente(ClienteDTO cliente)
+        public void AltaCliente(ClienteDTO cliente)
         {
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
-                _clienteRepository.Add(new Cliente());
+                _clienteRepository.Add(new Cliente(0, "","","",true));
                 unitOfWork.Commit();
             }
+        }
+
+        public void BajaCliente(ClienteDTO cliente)
+        {
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                _clienteRepository.Remove(new Cliente(0, "","","",true));
+                unitOfWork.Commit();
+            }
+        }
+
+        public void ActualizarDatosCliente(ClienteDTO cliente)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IList<ClienteDTO> ListadoClientes()
+        {
+            throw new NotImplementedException();
         }
     }
 }
