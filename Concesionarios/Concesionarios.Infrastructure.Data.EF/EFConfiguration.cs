@@ -9,7 +9,6 @@ namespace Concesionarios.Infrastructure.Data.EF
 {
     public class EFConfiguration : IDBConfiguration
     {
-
         public void Setup()
         {
             throw new NotImplementedException();
