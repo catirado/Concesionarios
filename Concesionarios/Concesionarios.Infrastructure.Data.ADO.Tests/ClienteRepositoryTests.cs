@@ -118,7 +118,7 @@ namespace Concesionarios.Infrastructure.Data.ADO.Tests
             var cliente = new Cliente(1, "Carlos", "Tirado", "941444444", true);
             repository.Add(cliente);
 
-            cliente.ChangeName("Jose");
+            cliente.ChangeName("Jose", "Tirado");
 
             repository.Update(cliente);
 
