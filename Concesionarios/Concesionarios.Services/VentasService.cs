@@ -1,5 +1,6 @@
 ﻿using Concesionarios.Domain.Repositories;
 using Concesionarios.Framework.Domain;
+using Concesionarios.Framework.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,10 +20,15 @@ namespace Concesionarios.Services
             IPresupuestoRepository presupuestoRepository,
             IVehiculoRepository vehiculoRepository)
         {
+            Ensure.Argument.NotNull(unitOfWorkFactory, "unitOfWorkFactory");
+            Ensure.Argument.NotNull(presupuestoRepository, "presupuestoRepository");
+            Ensure.Argument.NotNull(vehiculoRepository, "vehiculoRepository");
+
             _unitOfWorkFactory = unitOfWorkFactory;
             _presupuestoRepository = presupuestoRepository;
             _vehiculoRepository = vehiculoRepository;
         }
+
 
     }
 }
