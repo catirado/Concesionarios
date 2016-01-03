@@ -1,6 +1,8 @@
-﻿using Concesionarios.Domain.Repositories;
+﻿using Concesionarios.Domain;
+using Concesionarios.Domain.Repositories;
 using Concesionarios.Framework.Domain;
 using Concesionarios.Framework.Utils;
+using Concesionarios.Services.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +17,7 @@ namespace Concesionarios.Services
         private readonly IPresupuestoRepository _presupuestoRepository;
         private readonly IVehiculoRepository _vehiculoRepository;
 
-        public VentasService(
-            IUnitOfWorkFactory unitOfWorkFactory,
-            IPresupuestoRepository presupuestoRepository,
-            IVehiculoRepository vehiculoRepository)
+        public VentasService(IUnitOfWorkFactory unitOfWorkFactory, IPresupuestoRepository presupuestoRepository, IVehiculoRepository vehiculoRepository)
         {
             Ensure.Argument.NotNull(unitOfWorkFactory, "unitOfWorkFactory");
             Ensure.Argument.NotNull(presupuestoRepository, "presupuestoRepository");
@@ -29,6 +28,9 @@ namespace Concesionarios.Services
             _vehiculoRepository = vehiculoRepository;
         }
 
-
+        public void AddPresupuesto(Presupuesto presupuesto)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

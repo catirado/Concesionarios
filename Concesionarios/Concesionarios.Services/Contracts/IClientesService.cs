@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Concesionarios.Services
+namespace Concesionarios.Services.Contracts
 {
     public interface IClientesService
     {
         ClienteDTO AltaCliente(ClienteDTO cliente);
         void BajaCliente(ClienteDTO cliente);
-        void ActualizarDatosCliente(ClienteDTO cliente);
+        ActualizarDatosDTO ActualizarDatosCliente(ActualizarDatosDTO cliente);
         IList<ClienteDTO> ListadoClientes();
 
     }
