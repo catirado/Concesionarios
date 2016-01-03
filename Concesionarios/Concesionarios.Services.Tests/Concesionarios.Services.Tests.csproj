@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -51,6 +54,24 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ClientesServiceTests.cs" />
+    <Compile Include="Services\VentasServiceTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Mappers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Concesionarios.Services.DTO\Concesionarios.Services.DTO.csproj">
+      <Project>{e8e22963-e90e-42c0-9a74-1335ca65b71a}</Project>
+      <Name>Concesionarios.Services.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Concesionarios.Services\Concesionarios.Services.csproj">
+      <Project>{085ed1ea-1b1d-45d2-b33c-43385967122f}</Project>
+      <Name>Concesionarios.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
