@@ -50,8 +50,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="PresupuestoTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ClienteTests.cs" />
+    <Compile Include="VehiculoTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Concesionarios.Domain\Concesionarios.Domain.csproj">
