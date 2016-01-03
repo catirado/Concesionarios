@@ -55,7 +55,7 @@ namespace Concesionarios.Infrastructure.Data.ADO.Tests
         [TestMethod]
         public void CustomerRepositoryRemoveClientThatNotExistsDoNothing()
         {
-            var cliente = new Cliente(0, "", "", "", true);
+            var cliente = new Cliente(0, "Carlos", "Tirado", "934344", true);
             repository.Remove(cliente);
         }
 
@@ -118,7 +118,7 @@ namespace Concesionarios.Infrastructure.Data.ADO.Tests
             var cliente = new Cliente(1, "Carlos", "Tirado", "941444444", true);
             repository.Add(cliente);
 
-            cliente.ChangeName("Jose", "Tirado");
+            cliente.ChangeNombre("Jose", "Tirado");
 
             repository.Update(cliente);
 
