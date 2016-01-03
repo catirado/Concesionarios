@@ -21,16 +21,27 @@ namespace Concesionarios.Services
         {
             Ensure.Argument.NotNull(unitOfWorkFactory, "unitOfWorkFactory");
             Ensure.Argument.NotNull(clienteRepository, "clienteRepository");
+
             _unitOfWorkFactory = unitOfWorkFactory;
             _clienteRepository = clienteRepository;
         }
 
-        public void AltaCliente(ClienteDTO cliente)
+        public ClienteDTO AltaCliente(ClienteDTO clienteDTO)
         {
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
-                _clienteRepository.Add(new Cliente(0, "","","",true));
+                Ensure.Argument.NotNull(clienteDTO, "cliente not null");
+
+                var cliente = new Cliente(0, 
+                                         clienteDTO.Nombre, 
+                                         clienteDTO.Apellidos, 
+                                         clienteDTO.Telefono, 
+                                         clienteDTO.Vip);
+
+                _clienteRepository.Add(cliente);
                 unitOfWork.Commit();
+
+                return clienteDTO;
             }
         }
 
