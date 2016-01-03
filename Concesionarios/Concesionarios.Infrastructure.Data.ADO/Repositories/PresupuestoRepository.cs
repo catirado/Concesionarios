@@ -18,6 +18,11 @@ namespace Concesionarios.Infrastructure.Data.ADO.Repositories
             throw new NotImplementedException();
         }
 
+        public IList<Presupuesto> FindAllPresupuestosForVehiculo(Vehiculo vehiculo)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Add(Presupuesto entity)
         {
             throw new NotImplementedException();
@@ -47,5 +52,7 @@ namespace Concesionarios.Infrastructure.Data.ADO.Repositories
         {
             throw new NotImplementedException();
         }
+
+        
     }
 }
