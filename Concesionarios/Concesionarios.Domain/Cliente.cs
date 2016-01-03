@@ -1,4 +1,6 @@
 ﻿using Concesionarios.Framework.Domain;
+using Concesionarios.Framework.Utils;
+using Concesionarios.Framework.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +26,10 @@ namespace Concesionarios.Domain
             string telefono, 
             bool vip)
         {
+            Ensure.Argument.NotNullOrEmpty(nombre, "El nombre debe ser rellenado");
+            Ensure.Argument.NotNullOrEmpty(apellidos, "Los apellidos deben ser rellenados");
+            Ensure.Argument.NotNull(telefono, "El telefono no debe ser nulo");
+
             this.Id = id;
             this.Nombre = nombre;
             this.Apellidos = apellidos;
@@ -31,17 +37,30 @@ namespace Concesionarios.Domain
             this.Vip = vip;
         }
 
-        public void ChangeName(string name, string apellidos)
+        public void ChangeNombre(string nombre, string apellidos)
         {
-            this.Nombre = name;
+            Ensure.Argument.NotNullOrEmpty(nombre, "El nombre debe ser rellenado");
+            Ensure.Argument.NotNullOrEmpty(apellidos, "Los apellidos deben ser rellenados");
+
+            this.Nombre = nombre;
             this.Apellidos = apellidos;
         }
 
-        public void ChangePhone(string phone)
+        public void ChangeTelefono(string telefono)
         {
-            this.Telefono = phone;
+            Ensure.Argument.NotNull(telefono, "El telefono no debe ser nulo");
+
+            this.Telefono = telefono;
         }
 
-        //set vip
+        public void SetVip(bool vip)
+        {
+            this.Vip = vip;
+        }
+
+        public string NombreCompleto
+        {
+            get { return "{0} {1}".FormatWith(Nombre, Apellidos); }
+        }
     }
 }

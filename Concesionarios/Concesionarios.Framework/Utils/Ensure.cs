@@ -197,7 +197,7 @@ namespace Concesionarios.Framework.Utils
                     if (paramName.IsNullOrEmpty())
                         throw new ArgumentException("String value cannot be empty");
 
-                    throw new ArgumentException("String parameter " + paramName + " cannot be null or empty", paramName);
+                    throw new ArgumentNullException("String parameter " + paramName + " cannot be null or empty", paramName);
                 }
             }
 
