@@ -3,6 +3,7 @@ using Concesionarios.Domain.Repositories;
 using Concesionarios.Framework.Database;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,33 +16,90 @@ namespace Concesionarios.Infrastructure.Data.ADO.Repositories
 
         public void Add(Vehiculo entity)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                using (var command = connection.CreateCommand())
+                {
+                    command.CommandText = "INSERT INTO Vehiculos(Marca, Modelo, Potencia) "
+                                          + "OUTPUT INSERTED.Id "
+                                          + "VALUES(@marca,@modelo,@potencia)";
+
+                    command.Parameters.AddWithValue("@marca", entity.Marca);
+                    command.Parameters.AddWithValue("@modelo", entity.Modelo);
+                    command.Parameters.AddWithValue("@potencia", entity.Potencia);
+
+                    int id = (int)command.ExecuteScalar();
+                    entity.Id = id;
+                }
+            }
         }
 
         public void Remove(Vehiculo entity)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                using (var command = connection.CreateCommand())
+                {
+                    command.CommandText = "DELETE FROM Vehiculos WHERE Id = @id";
+                    command.Parameters.AddWithValue("@id", entity.Id);
+                    command.ExecuteNonQuery();
+                }
+            }
         }
 
         public void Update(Vehiculo entity)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                using (var command = connection.CreateCommand())
+                {
+                    command.CommandText = "UPDATE Vehiculos SET Marca = @marca, Modelo = @modelo,  "
+                                          + "Potencia = @potencia";
+                    command.Parameters.AddWithValue("@marca", entity.Marca);
+                    command.Parameters.AddWithValue("@modelo", entity.Modelo);
+                    command.Parameters.AddWithValue("@potencia", entity.Potencia);
+                    command.ExecuteNonQuery();
+                }
+            }
         }
 
         public Vehiculo Get(int id)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                using (var command = connection.CreateCommand())
+                {
+                    command.CommandText = @"SELECT * FROM Vehiculos WHERE Id = @id";
+                    command.Parameters.AddWithValue("@id", id);
+                    return ToList(command).FirstOrDefault();
+                }
+            }
         }
 
         public IEnumerable<Vehiculo> GetAll()
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                using (var command = connection.CreateCommand())
+                {
+                    command.CommandText = @"SELECT * FROM Vehiculos";
+                    return ToList(command);
+                }
+            }
         }
-
 
         protected override Vehiculo Map(System.Data.IDataRecord record)
         {
-            throw new NotImplementedException();
+            return new Vehiculo(
+               (int)record["Id"],
+               (string)record["Marca"],
+               (string)record["Modelo"],
+               (int)record["Potenica"]);
         }
     }
 }

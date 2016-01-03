@@ -13,8 +13,9 @@ namespace Concesionarios.Domain
         public string Modelo { get; private set; }
         public int Potencia { get; private set; }
 
-        //mejor meter una factoria
-        public Vehiculo()
+        private Vehiculo() { }
+
+        public Vehiculo(int id, string marca, string modelo, int potencia)
         {
 
         }
