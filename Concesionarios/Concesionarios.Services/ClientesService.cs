@@ -2,6 +2,7 @@
 using Concesionarios.Domain.Repositories;
 using Concesionarios.Framework.Domain;
 using Concesionarios.Framework.Utils;
+using Concesionarios.Services.Contracts;
 using Concesionarios.Services.DTO;
 using System;
 using System.Collections.Generic;
@@ -54,14 +55,31 @@ namespace Concesionarios.Services
             }
         }
 
-        public void ActualizarDatosCliente(ClienteDTO cliente)
+        public ActualizarDatosDTO ActualizarDatosCliente(ActualizarDatosDTO clienteDTO)
         {
-            throw new NotImplementedException();
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                Ensure.Argument.NotNull(clienteDTO, "cliente not null");
+                var cliente = _clienteRepository.Get(clienteDTO.Id);
+
+                if (cliente != null)
+                {
+                    cliente.ChangeNombre(clienteDTO.Nombre, clienteDTO.Apellidos);
+                    cliente.ChangeTelefono(clienteDTO.Telefono);
+                    cliente.SetVip(clienteDTO.Vip);
+
+                    _clienteRepository.Update(cliente);
+                    unitOfWork.Commit();
+                }
+
+                return clienteDTO;
+            }
         }
 
         public IList<ClienteDTO> ListadoClientes()
         {
-            throw new NotImplementedException();
+            return null;
+            //return _clienteRepository.GetAll();
         }
     }
 }
