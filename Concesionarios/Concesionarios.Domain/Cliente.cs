@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Concesionarios.Domain.Resources;
 
 namespace Concesionarios.Domain
 {
@@ -26,9 +27,9 @@ namespace Concesionarios.Domain
             string telefono, 
             bool vip)
         {
-            Ensure.Argument.NotNullOrEmpty(nombre, "El nombre debe ser rellenado");
-            Ensure.Argument.NotNullOrEmpty(apellidos, "Los apellidos deben ser rellenados");
-            Ensure.Argument.NotNull(telefono, "El telefono no debe ser nulo");
+            Ensure.Argument.NotNullOrEmpty(nombre, Messages.ClienteNombreNotNullOrEmpty);
+            Ensure.Argument.NotNullOrEmpty(apellidos, Messages.ClienteApellidosNotNullOrEmpty);
+            Ensure.Argument.NotNull(telefono, Messages.ClienteTelefonoNotNull);
 
             this.Id = id;
             this.Nombre = nombre;
@@ -39,8 +40,8 @@ namespace Concesionarios.Domain
 
         public void ChangeNombre(string nombre, string apellidos)
         {
-            Ensure.Argument.NotNullOrEmpty(nombre, "El nombre debe ser rellenado");
-            Ensure.Argument.NotNullOrEmpty(apellidos, "Los apellidos deben ser rellenados");
+            Ensure.Argument.NotNullOrEmpty(nombre, Messages.ClienteNombreNotNullOrEmpty);
+            Ensure.Argument.NotNullOrEmpty(apellidos, Messages.ClienteApellidosNotNullOrEmpty);
 
             this.Nombre = nombre;
             this.Apellidos = apellidos;
@@ -48,7 +49,7 @@ namespace Concesionarios.Domain
 
         public void ChangeTelefono(string telefono)
         {
-            Ensure.Argument.NotNull(telefono, "El telefono no debe ser nulo");
+            Ensure.Argument.NotNull(telefono, Messages.ClienteTelefonoNotNull);
 
             this.Telefono = telefono;
         }
