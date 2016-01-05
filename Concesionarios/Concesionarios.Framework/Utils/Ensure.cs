@@ -74,6 +74,18 @@ namespace Concesionarios.Framework.Utils
         }
 
         /// <summary>
+        /// Ensures given object is not null
+        /// </summary>
+        /// <param name="value">Value of the object to test for null reference</param>
+        /// <param name="message">Message for the Null Reference Exception</param>
+        /// <exception cref="System.NullReferenceException">Thrown when <paramref name="value"/> is null</exception>
+        public static void NotNull<TException>(object value, string message = "") where TException : Exception
+        {
+            That<TException>(value != null, message);
+        }
+
+
+        /// <summary>
         /// Ensures given object is null
         /// </summary>
         /// <param name="value">Value of the object to test for null reference</param>
