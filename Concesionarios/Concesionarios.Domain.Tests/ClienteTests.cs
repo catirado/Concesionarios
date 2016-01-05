@@ -7,6 +7,23 @@ namespace Concesionarios.Domain.Tests
     public class ClienteTests
     {
         [TestMethod]
+        public void CreateValidClient()
+        {
+            int id = 1;
+            string nombre = "carlos";
+            string apellido = "tirado";
+            string telefono = "911";
+            bool isVip = true;
+
+            var cliente = new Cliente(id, nombre, apellido, telefono, isVip);
+            Assert.AreEqual(cliente.Id, id);
+            Assert.AreEqual(cliente.Nombre, nombre);
+            Assert.AreEqual(cliente.Apellidos, apellido);
+            Assert.AreEqual(cliente.Telefono, cliente.Telefono);
+            Assert.AreEqual(cliente.Vip, isVip);
+        }
+
+        [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void CannotCreateAClienteWithEmptyNombre()
         {
@@ -41,6 +58,16 @@ namespace Concesionarios.Domain.Tests
             var cliente = new Cliente(0, "nombre", "apellidos", null, true);
         }
 
+        [TestMethod]
+        public void ChangeNombreModifyNombreAndApellido()
+        {
+            string nombre = "carlos";
+            string apellidos = "tirado";
+            var cliente = new Cliente(0, "nombre", "apellido", "telefono", true);
+            cliente.ChangeNombre(nombre, apellidos);
+            Assert.AreEqual(cliente.Nombre, nombre);
+            Assert.AreEqual(cliente.Apellidos, apellidos);
+        }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
@@ -48,7 +75,6 @@ namespace Concesionarios.Domain.Tests
         {
             var cliente = new Cliente(0, "nombre", "apellido", "telefono", true);
             cliente.ChangeNombre(String.Empty, "apellido");
-
         }
 
         [TestMethod]
@@ -76,12 +102,21 @@ namespace Concesionarios.Domain.Tests
         }
 
         [TestMethod]
+        public void CannotChangeTelefonoModifyTelefono()
+        {
+            string telefono = "911";
+            var cliente = new Cliente(0, "nombre", "apellido", "telefono", true);
+            cliente.ChangeTelefono(telefono);
+            Assert.AreEqual(cliente.Telefono, telefono);
+        }
+
+        [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void CannotChangeTelefonoWithNullTelefono()
         {
             var cliente = new Cliente(0, "nombre", "apellido", "telefono", true);
             cliente.ChangeTelefono(null);
         }
-
+        
     }
 }
