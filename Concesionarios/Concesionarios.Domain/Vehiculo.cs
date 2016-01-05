@@ -1,4 +1,5 @@
-﻿using Concesionarios.Framework.Domain;
+﻿using Concesionarios.Domain.Resources;
+using Concesionarios.Framework.Domain;
 using Concesionarios.Framework.Utils;
 using System;
 using System.Collections.Generic;
@@ -14,12 +15,13 @@ namespace Concesionarios.Domain
         public string Modelo { get; private set; }
         public int Potencia { get; private set; }
 
+        //for EF
         private Vehiculo() { }
 
         public Vehiculo(int id, string marca, string modelo, int potencia)
         {
-            Ensure.Argument.NotNull(marca, "marca");
-            Ensure.Argument.NotNull(modelo, "modelo");
+            Ensure.Argument.NotNullOrEmpty(marca, Messages.VehiculoMarcaNotNullOrEmpty);
+            Ensure.Argument.NotNullOrEmpty(modelo, Messages.VehiculoModeloNotNullOrEmpty);
 
             this.Id = id;
             this.Modelo = modelo;
@@ -29,13 +31,13 @@ namespace Concesionarios.Domain
 
         public void ChangeMarca(string marca)
         {
-            Ensure.Argument.NotNull(marca, "marca");
+            Ensure.Argument.NotNullOrEmpty(marca, Messages.VehiculoMarcaNotNullOrEmpty);
             this.Marca = marca;
         }
 
         public void ChangeModelo(string modelo)
         {
-            Ensure.Argument.NotNull(modelo, "modelo");
+            Ensure.Argument.NotNullOrEmpty(modelo, Messages.VehiculoModeloNotNullOrEmpty);
             this.Modelo = modelo;
         }
 

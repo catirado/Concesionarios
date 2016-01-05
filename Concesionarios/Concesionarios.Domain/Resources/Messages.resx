@@ -118,12 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ClienteApellidosNotNullOrEmpty" xml:space="preserve">
-    <value>Los apellidos deben ser rellenados</value>
+    <value>Los apellidos no pueden ser vacíos o nulos</value>
   </data>
   <data name="ClienteNombreNotNullOrEmpty" xml:space="preserve">
-    <value>El nombre debe ser rellenado</value>
+    <value>El nombre no puede ser vacío o nulo</value>
   </data>
   <data name="ClienteTelefonoNotNull" xml:space="preserve">
     <value>El telefono no debe ser nulo</value>
+  </data>
+  <data name="VehiculoMarcaNotNullOrEmpty" xml:space="preserve">
+    <value>La marca no puede ser vacia o nula</value>
+  </data>
+  <data name="VehiculoModeloNotNullOrEmpty" xml:space="preserve">
+    <value>El modelo no puede ser vacío o nulo</value>
   </data>
 </root>

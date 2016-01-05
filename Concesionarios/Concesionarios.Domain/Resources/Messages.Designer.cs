@@ -61,7 +61,7 @@ namespace Concesionarios.Domain.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Los apellidos deben ser rellenados.
+        ///   Looks up a localized string similar to Los apellidos no pueden ser vacíos o nulos.
         /// </summary>
         internal static string ClienteApellidosNotNullOrEmpty {
             get {
@@ -70,7 +70,7 @@ namespace Concesionarios.Domain.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to El nombre debe ser rellenado.
+        ///   Looks up a localized string similar to El nombre no puede ser vacío o nulo.
         /// </summary>
         internal static string ClienteNombreNotNullOrEmpty {
             get {
@@ -84,6 +84,24 @@ namespace Concesionarios.Domain.Resources {
         internal static string ClienteTelefonoNotNull {
             get {
                 return ResourceManager.GetString("ClienteTelefonoNotNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La marca no puede ser vacia o nula.
+        /// </summary>
+        internal static string VehiculoMarcaNotNullOrEmpty {
+            get {
+                return ResourceManager.GetString("VehiculoMarcaNotNullOrEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El modelo no puede ser vacío o nulo.
+        /// </summary>
+        internal static string VehiculoModeloNotNullOrEmpty {
+            get {
+                return ResourceManager.GetString("VehiculoModeloNotNullOrEmpty", resourceCulture);
             }
         }
     }
