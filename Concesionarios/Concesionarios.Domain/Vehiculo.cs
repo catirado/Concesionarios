@@ -1,4 +1,5 @@
 ﻿using Concesionarios.Framework.Domain;
+using Concesionarios.Framework.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,31 @@ namespace Concesionarios.Domain
 
         public Vehiculo(int id, string marca, string modelo, int potencia)
         {
+            Ensure.Argument.NotNull(marca, "marca");
+            Ensure.Argument.NotNull(modelo, "modelo");
 
+            this.Id = id;
+            this.Modelo = modelo;
+            this.Marca = marca;
+            this.Potencia = potencia;
         }
+
+        public void ChangeMarca(string marca)
+        {
+            Ensure.Argument.NotNull(marca, "marca");
+            this.Marca = marca;
+        }
+
+        public void ChangeModelo(string modelo)
+        {
+            Ensure.Argument.NotNull(modelo, "modelo");
+            this.Modelo = modelo;
+        }
+
+        public void ChangePotencia(int potencia)
+        {
+            this.Potencia = potencia;
+        }
+
     }
 }

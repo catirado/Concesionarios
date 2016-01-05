@@ -19,16 +19,19 @@ namespace Concesionarios.Domain
         private Presupuesto() { }
 
         public Presupuesto(
+            int id,
             Cliente cliente, 
             Vehiculo vehiculo, 
             decimal importe, 
             PresupuestoEstado estado = PresupuestoEstado.Abierto)
         {
-            //TODO: ensure that tienen id
             Ensure.Argument.NotNull(cliente, "cliente");
             Ensure.Argument.NotNull(vehiculo, "vehiculo");
+            Ensure.Argument.IsNot(vehiculo.Id == 0, "Vehiculo debe tener un identificador valido");
+            Ensure.Argument.IsNot(cliente.Id == 0, "Cliente debe tener un identificador valido");
             Ensure.That<ArgumentException>(importe > 0, "Importe debe ser mayor que 0");
 
+            this.Id = id;
             this.Cliente = cliente;
             this.Vehiculo = vehiculo;
             this.Importe = importe;
