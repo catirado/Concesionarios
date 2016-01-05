@@ -19,7 +19,7 @@ namespace Concesionarios.Domain.Tests
             Assert.AreEqual(cliente.Id, id);
             Assert.AreEqual(cliente.Nombre, nombre);
             Assert.AreEqual(cliente.Apellidos, apellido);
-            Assert.AreEqual(cliente.Telefono, cliente.Telefono);
+            Assert.AreEqual(cliente.Telefono, telefono);
             Assert.AreEqual(cliente.Vip, isVip);
         }
 
@@ -102,7 +102,7 @@ namespace Concesionarios.Domain.Tests
         }
 
         [TestMethod]
-        public void CannotChangeTelefonoModifyTelefono()
+        public void ChangeTelefonoModifyTelefono()
         {
             string telefono = "911";
             var cliente = new Cliente(0, "nombre", "apellido", "telefono", true);
