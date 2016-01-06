@@ -78,7 +78,6 @@ namespace Concesionarios.Domain.Tests
             vehiculo.ChangeMarca(null);
         }
 
-
         [TestMethod]
         public void ChangeMarcaModifyModelo()
         {

@@ -126,6 +126,30 @@
   <data name="ClienteTelefonoNotNull" xml:space="preserve">
     <value>El telefono no debe ser nulo</value>
   </data>
+  <data name="PrespuestoClienteMustHaveValidId" xml:space="preserve">
+    <value>Cliente debe tener un identificador valido</value>
+  </data>
+  <data name="PrespuestoClienteNotNull" xml:space="preserve">
+    <value>El cliente no puede ser nulo</value>
+  </data>
+  <data name="PrespuestoVehiculoMustHaveValidId" xml:space="preserve">
+    <value>Vehiculo debe tener un identificador valido</value>
+  </data>
+  <data name="PresupuestoAceptarNotCerrado" xml:space="preserve">
+    <value>Prespuesto cerrado, debes reabrirlo para poder aceptarlo</value>
+  </data>
+  <data name="PresupuestoCerrarNotCerrado" xml:space="preserve">
+    <value>Presupuesto ya cerrado</value>
+  </data>
+  <data name="PresupuestoImporteGreatherThanZero" xml:space="preserve">
+    <value>El importe del presupuesto debe ser mayor que cero</value>
+  </data>
+  <data name="PresupuestoReabrirNotAbierto" xml:space="preserve">
+    <value>Presupuesto ya abierto</value>
+  </data>
+  <data name="PreuspuestoVehiculoNotNull" xml:space="preserve">
+    <value>El vehiculo no puede ser nulo</value>
+  </data>
   <data name="VehiculoMarcaNotNullOrEmpty" xml:space="preserve">
     <value>La marca no puede ser vacia o nula</value>
   </data>

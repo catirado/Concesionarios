@@ -1,4 +1,5 @@
-﻿using Concesionarios.Framework.Domain;
+﻿using Concesionarios.Domain.Resources;
+using Concesionarios.Framework.Domain;
 using Concesionarios.Framework.Utils;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace Concesionarios.Domain
         public virtual Vehiculo Vehiculo { get; private set; }
         public virtual Cliente Cliente { get; private set; }
 
+        //for EF
         private Presupuesto() { }
 
         public Presupuesto(
@@ -25,11 +27,11 @@ namespace Concesionarios.Domain
             decimal importe, 
             PresupuestoEstado estado = PresupuestoEstado.Abierto)
         {
-            Ensure.Argument.NotNull(cliente, "cliente");
-            Ensure.Argument.NotNull(vehiculo, "vehiculo");
-            Ensure.Argument.IsNot(vehiculo.Id == 0, "Vehiculo debe tener un identificador valido");
-            Ensure.Argument.IsNot(cliente.Id == 0, "Cliente debe tener un identificador valido");
-            Ensure.That<ArgumentException>(importe > 0, "Importe debe ser mayor que 0");
+            Ensure.Argument.NotNull(cliente, Messages.PrespuestoClienteNotNull);
+            Ensure.Argument.NotNull(vehiculo, Messages.PreuspuestoVehiculoNotNull);
+            Ensure.Argument.IsNot(vehiculo.Id == 0, Messages.PrespuestoVehiculoMustHaveValidId);
+            Ensure.Argument.IsNot(cliente.Id == 0, Messages.PrespuestoClienteMustHaveValidId);
+            Ensure.That<ArgumentException>(importe > 0, Messages.PresupuestoImporteGreatherThanZero);
 
             this.Id = id;
             this.Cliente = cliente;
@@ -40,22 +42,31 @@ namespace Concesionarios.Domain
 
         public void CambiarImporteNegociado(decimal importe)
         {
-            Ensure.That<ArgumentException>(importe > 0, "Importe debe ser mayor que 0");
+            Ensure.That<ArgumentException>(importe > 0, Messages.PresupuestoImporteGreatherThanZero);
             this.Importe = importe;
         }
         
         public void Aceptar()
         {
+            if (this.Estado == PresupuestoEstado.Cerrado)
+                throw new InvalidOperationException(Messages.PresupuestoAceptarNotCerrado);
+
             this.Estado = PresupuestoEstado.Aceptado;
         }
 
         public void Cerrar()
         {
+            if (this.Estado == PresupuestoEstado.Cerrado)
+                throw new InvalidOperationException(Messages.PresupuestoCerrarNotCerrado);
+
             this.Estado = PresupuestoEstado.Cerrado;
         }
 
         public void Reabrir()
         {
+            if (this.Estado == PresupuestoEstado.Abierto)
+                throw new InvalidOperationException(Messages.PresupuestoReabrirNotAbierto);
+
             this.Estado = PresupuestoEstado.Abierto;
         }
     }

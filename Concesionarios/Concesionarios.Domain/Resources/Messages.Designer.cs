@@ -88,6 +88,78 @@ namespace Concesionarios.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cliente debe tener un identificador valido.
+        /// </summary>
+        internal static string PrespuestoClienteMustHaveValidId {
+            get {
+                return ResourceManager.GetString("PrespuestoClienteMustHaveValidId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El cliente no puede ser nulo.
+        /// </summary>
+        internal static string PrespuestoClienteNotNull {
+            get {
+                return ResourceManager.GetString("PrespuestoClienteNotNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vehiculo debe tener un identificador valido.
+        /// </summary>
+        internal static string PrespuestoVehiculoMustHaveValidId {
+            get {
+                return ResourceManager.GetString("PrespuestoVehiculoMustHaveValidId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prespuesto cerrado, debes reabrirlo para poder aceptarlo.
+        /// </summary>
+        internal static string PresupuestoAceptarNotCerrado {
+            get {
+                return ResourceManager.GetString("PresupuestoAceptarNotCerrado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Presupuesto ya cerrado.
+        /// </summary>
+        internal static string PresupuestoCerrarNotCerrado {
+            get {
+                return ResourceManager.GetString("PresupuestoCerrarNotCerrado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El importe del presupuesto debe ser mayor que cero.
+        /// </summary>
+        internal static string PresupuestoImporteGreatherThanZero {
+            get {
+                return ResourceManager.GetString("PresupuestoImporteGreatherThanZero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Presupuesto ya abierto.
+        /// </summary>
+        internal static string PresupuestoReabrirNotAbierto {
+            get {
+                return ResourceManager.GetString("PresupuestoReabrirNotAbierto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El vehiculo no puede ser nulo.
+        /// </summary>
+        internal static string PreuspuestoVehiculoNotNull {
+            get {
+                return ResourceManager.GetString("PreuspuestoVehiculoNotNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to La marca no puede ser vacia o nula.
         /// </summary>
         internal static string VehiculoMarcaNotNullOrEmpty {
