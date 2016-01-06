@@ -43,8 +43,7 @@ namespace Concesionarios.Services
             {
                 Ensure.Argument.NotNull(clienteDTO, "cliente not null");
 
-                var cliente = new Cliente(0, 
-                                         clienteDTO.Nombre, 
+                var cliente = new Cliente(clienteDTO.Nombre, 
                                          clienteDTO.Apellidos, 
                                          clienteDTO.Telefono, 
                                          clienteDTO.Vip);
@@ -60,7 +59,7 @@ namespace Concesionarios.Services
         {
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
-                _clienteRepository.Remove(new Cliente(id, "","","",true));
+                _clienteRepository.Remove(null);
                 unitOfWork.Commit();
             }
         }

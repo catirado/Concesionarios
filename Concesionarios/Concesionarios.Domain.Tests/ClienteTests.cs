@@ -9,14 +9,13 @@ namespace Concesionarios.Domain.Tests
         [TestMethod]
         public void CreateValidClient()
         {
-            int id = 1;
             string nombre = "carlos";
             string apellido = "tirado";
             string telefono = "911";
             bool isVip = true;
 
-            var cliente = new Cliente(id, nombre, apellido, telefono, isVip);
-            Assert.AreEqual(cliente.Id, id);
+            var cliente = new Cliente(nombre, apellido, telefono, isVip);
+            Assert.AreEqual(cliente.Id, 0);
             Assert.AreEqual(cliente.Nombre, nombre);
             Assert.AreEqual(cliente.Apellidos, apellido);
             Assert.AreEqual(cliente.Telefono, telefono);
@@ -27,35 +26,35 @@ namespace Concesionarios.Domain.Tests
         [ExpectedException(typeof(ArgumentNullException))]
         public void CannotCreateAClienteWithEmptyNombre()
         {
-            var cliente = new Cliente(0, String.Empty, "apellidos", "telefono", true);
+            var cliente = new Cliente(String.Empty, "apellidos", "telefono", true);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void CannotCreateAClienteWithNullNombre()
         {
-            var cliente = new Cliente(0, null, "apellidos", "telefono", true);
+            var cliente = new Cliente(null, "apellidos", "telefono", true);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void CannotCreateAClienteWithEmptyApellidos()
         {
-            var cliente = new Cliente(0, "nombre", String.Empty, "telefono", true);
+            var cliente = new Cliente("nombre", String.Empty, "telefono", true);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void CannotCreateAClienteWithNullApellidos()
         {
-            var cliente = new Cliente(0, "nombre", null, "telefono", true);
+            var cliente = new Cliente("nombre", null, "telefono", true);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void CannotCreateAClienteWithNullTelefono()
         {
-            var cliente = new Cliente(0, "nombre", "apellidos", null, true);
+            var cliente = new Cliente("nombre", "apellidos", null, true);
         }
 
         [TestMethod]
@@ -63,7 +62,7 @@ namespace Concesionarios.Domain.Tests
         {
             string nombre = "carlos";
             string apellidos = "tirado";
-            var cliente = new Cliente(0, "nombre", "apellido", "telefono", true);
+            var cliente = new Cliente("nombre", "apellido", "telefono", true);
             cliente.ChangeNombre(nombre, apellidos);
             Assert.AreEqual(cliente.Nombre, nombre);
             Assert.AreEqual(cliente.Apellidos, apellidos);
@@ -73,7 +72,7 @@ namespace Concesionarios.Domain.Tests
         [ExpectedException(typeof(ArgumentNullException))]
         public void CannotChangeNombreWithEmptyNombre()
         {
-            var cliente = new Cliente(0, "nombre", "apellido", "telefono", true);
+            var cliente = new Cliente("nombre", "apellido", "telefono", true);
             cliente.ChangeNombre(String.Empty, "apellido");
         }
 
@@ -81,7 +80,7 @@ namespace Concesionarios.Domain.Tests
         [ExpectedException(typeof(ArgumentNullException))]
         public void CannotChangeNombreWithNullNombre()
         {
-            var cliente = new Cliente(0, "nombre", "apellido", "telefono", true);
+            var cliente = new Cliente("nombre", "apellido", "telefono", true);
             cliente.ChangeNombre(null, "apellido");
         }
 
@@ -89,7 +88,7 @@ namespace Concesionarios.Domain.Tests
         [ExpectedException(typeof(ArgumentNullException))]
         public void CannotChangeNombreWithEmptyApellidos()
         {
-            var cliente = new Cliente(0, "nombre", "apellido", "telefono", true);
+            var cliente = new Cliente("nombre", "apellido", "telefono", true);
             cliente.ChangeNombre("nombre", String.Empty);
         }
 
@@ -97,7 +96,7 @@ namespace Concesionarios.Domain.Tests
         [ExpectedException(typeof(ArgumentNullException))]
         public void CannotChangeNombreWithNullApellidos()
         {
-            var cliente = new Cliente(0, "nombre", "apellido", "telefono", true);
+            var cliente = new Cliente("nombre", "apellido", "telefono", true);
             cliente.ChangeNombre("nombre", null);
         }
 
@@ -105,7 +104,7 @@ namespace Concesionarios.Domain.Tests
         public void ChangeTelefonoModifyTelefono()
         {
             string telefono = "911";
-            var cliente = new Cliente(0, "nombre", "apellido", "telefono", true);
+            var cliente = new Cliente("nombre", "apellido", "telefono", true);
             cliente.ChangeTelefono(telefono);
             Assert.AreEqual(cliente.Telefono, telefono);
         }
@@ -114,7 +113,7 @@ namespace Concesionarios.Domain.Tests
         [ExpectedException(typeof(ArgumentNullException))]
         public void CannotChangeTelefonoWithNullTelefono()
         {
-            var cliente = new Cliente(0, "nombre", "apellido", "telefono", true);
+            var cliente = new Cliente("nombre", "apellido", "telefono", true);
             cliente.ChangeTelefono(null);
         }
         

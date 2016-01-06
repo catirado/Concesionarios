@@ -18,12 +18,11 @@ namespace Concesionarios.Domain
         //for EF
         private Vehiculo() { }
 
-        public Vehiculo(int id, string marca, string modelo, int potencia)
+        public Vehiculo(string marca, string modelo, int potencia)
         {
             Ensure.Argument.NotNullOrEmpty(marca, Messages.VehiculoMarcaNotNullOrEmpty);
             Ensure.Argument.NotNullOrEmpty(modelo, Messages.VehiculoModeloNotNullOrEmpty);
 
-            this.Id = id;
             this.Modelo = modelo;
             this.Marca = marca;
             this.Potencia = potencia;

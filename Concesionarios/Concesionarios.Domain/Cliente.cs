@@ -21,7 +21,6 @@ namespace Concesionarios.Domain
         private Cliente() { }
 
         public Cliente(
-            int id, 
             string nombre, 
             string apellidos, 
             string telefono, 
@@ -31,7 +30,6 @@ namespace Concesionarios.Domain
             Ensure.Argument.NotNullOrEmpty(apellidos, Messages.ClienteApellidosNotNullOrEmpty);
             Ensure.Argument.NotNull(telefono, Messages.ClienteTelefonoNotNull);
 
-            this.Id = id;
             this.Nombre = nombre;
             this.Apellidos = apellidos;
             this.Telefono = telefono;

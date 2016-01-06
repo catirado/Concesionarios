@@ -30,7 +30,7 @@ namespace Concesionarios.Infrastructure.Data.ADO.Repositories
                     command.Parameters.AddWithValue("@potencia", entity.Potencia);
 
                     int id = (int)command.ExecuteScalar();
-                    entity.Id = id;
+                    entity.ChangeCurrentIdentity(id);
                 }
             }
         }
@@ -95,11 +95,13 @@ namespace Concesionarios.Infrastructure.Data.ADO.Repositories
 
         protected override Vehiculo Map(System.Data.IDataRecord record)
         {
-            return new Vehiculo(
-               (int)record["Id"],
+            var vehiculo = new Vehiculo(
                (string)record["Marca"],
                (string)record["Modelo"],
                (int)record["Potenica"]);
+
+            vehiculo.ChangeCurrentIdentity((int)record["Id"]);
+            return vehiculo;
         }
     }
 }

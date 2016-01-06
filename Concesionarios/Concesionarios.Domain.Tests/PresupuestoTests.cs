@@ -10,13 +10,25 @@ namespace Concesionarios.Domain.Tests
     [TestClass]
     public class PresupuestoTests
     {
+        private Vehiculo GetVehiculo()
+        {
+            var vehiculo = new Vehiculo("Opel", "Astra", 200);
+            vehiculo.ChangeCurrentIdentity(1);
+            return vehiculo;
+        }
+
+        private Cliente GetCliente()
+        {
+            var cliente = new Cliente("carlos", "tirado", "", true);
+            cliente.ChangeCurrentIdentity(1);
+            return cliente;
+        }
+
         private Presupuesto GetPresupuesto()
         {
-            return new Presupuesto(
-                1,
-                new Cliente(1, "carlos", "tirado", "", true), 
-                new Vehiculo(1, "Opel", "Astra", 200), 
-                100);
+            var presupuesto = new Presupuesto(GetCliente(), GetVehiculo(), 100);
+            presupuesto.ChangeCurrentIdentity(1);
+            return presupuesto;
         }
 
         [TestMethod]
@@ -50,9 +62,8 @@ namespace Concesionarios.Domain.Tests
         public void CannotCreateAPresupuestoWithNullCliente()
         {
             var presupuesto = new Presupuesto(
-                1,
                 null,
-                new Vehiculo(1, "Opel", "Astra", 200), 
+                GetVehiculo(), 
                 100);
         }
 
@@ -61,8 +72,7 @@ namespace Concesionarios.Domain.Tests
         public void CannotCreateAPresupuestoWithNullVehiculo()
         {
             var presupuesto = new Presupuesto(
-                1,
-                new Cliente(1, "carlos", "tirado", "", true), 
+                GetCliente(), 
                 null,
                 100);
         }
@@ -72,9 +82,8 @@ namespace Concesionarios.Domain.Tests
         public void CannotCreateAPresupuestoWithTransientCliente()
         {
             var presupuesto = new Presupuesto(
-                1,
-                new Cliente(0, "carlos", "tirado", "", true),
-                new Vehiculo(1, "Opel", "Astra", 200),
+                new Cliente("carlos", "tirado", "", true),
+                GetVehiculo(),
                 100);
         }
 
@@ -83,9 +92,8 @@ namespace Concesionarios.Domain.Tests
         public void CannotCreateAPresupuestoWithTransientVehiculo()
         {
             var presupuesto = new Presupuesto(
-                1,
-                new Cliente(1, "carlos", "tirado", "", true),
-                new Vehiculo(0, "Opel", "Astra", 200),
+                GetCliente(),
+                new Vehiculo("Opel", "Astra", 200),
                 100);
         }
 
@@ -94,9 +102,8 @@ namespace Concesionarios.Domain.Tests
         public void CannotCreateAPresupuestoWithImporteEqualToZero()
         {
             var presupuesto = new Presupuesto(
-                1,
-                new Cliente(1, "carlos", "tirado", "", true),
-                new Vehiculo(1, "Opel", "Astra", 200),
+                GetCliente(),
+                GetVehiculo(),
                 0);
         }
 
@@ -105,9 +112,8 @@ namespace Concesionarios.Domain.Tests
         public void CannotCreateAPresupuestoWithImporteLessThanZero()
         {
             var presupuesto = new Presupuesto(
-                1,
-                new Cliente(1, "carlos", "tirado", "", true),
-                new Vehiculo(1, "Opel", "Astra", 200),
+                GetCliente(),
+                GetVehiculo(),
                 -100);
         }
 

@@ -37,7 +37,7 @@ namespace Concesionarios.Infrastructure.Data.ADO.Tests
         [TestMethod]
         public void CustomerRepositoryAddClientReturnsId()
         {
-            var cliente = new Cliente(1, "Carlos", "Tirado", "941444444", true);
+            var cliente = new Cliente("Carlos", "Tirado", "941444444", true);
             repository.Add(cliente);
             Assert.AreNotEqual(0, cliente.Id);
         }
@@ -45,7 +45,7 @@ namespace Concesionarios.Infrastructure.Data.ADO.Tests
         [TestMethod]
         public void CustomerRepositoryAddClientInsertIt()
         {
-            var cliente = new Cliente(1, "Carlos", "Tirado", "941444444", true);
+            var cliente = new Cliente("Carlos", "Tirado", "941444444", true);
             repository.Add(cliente);
 
             var recoverClient = repository.Get(cliente.Id);
@@ -55,14 +55,14 @@ namespace Concesionarios.Infrastructure.Data.ADO.Tests
         [TestMethod]
         public void CustomerRepositoryRemoveClientThatNotExistsDoNothing()
         {
-            var cliente = new Cliente(0, "Carlos", "Tirado", "934344", true);
+            var cliente = new Cliente("Carlos", "Tirado", "934344", true);
             repository.Remove(cliente);
         }
 
         [TestMethod]
         public void CustomerRepositoryRemoveClientDeleteFromDatabase()
         {
-            var cliente = new Cliente(1, "Carlos", "Tirado", "941444444", true);
+            var cliente = new Cliente("Carlos", "Tirado", "941444444", true);
             repository.Add(cliente);
 
             var recoverClient = repository.Get(cliente.Id);
@@ -84,7 +84,7 @@ namespace Concesionarios.Infrastructure.Data.ADO.Tests
         [TestMethod]
         public void CustomerRepositoryGetReturnItem()
         {
-            var cliente = new Cliente(1, "Carlos", "Tirado", "941444444", true);
+            var cliente = new Cliente("Carlos", "Tirado", "941444444", true);
             repository.Add(cliente);
 
             var recoverClient = repository.Get(cliente.Id);
@@ -98,9 +98,9 @@ namespace Concesionarios.Infrastructure.Data.ADO.Tests
         [TestMethod]
         public void CustomerRepositoryGetAllReturnAllItems()
         {
-            var cliente1 = new Cliente(1, "Carlos", "Tirado", "941444444", true);
-            var cliente2 = new Cliente(2, "Jose", "Juan", "941444444", false);
-            var cliente3 = new Cliente(3, "María", "DB", "941444444", false);
+            var cliente1 = new Cliente("Carlos", "Tirado", "941444444", true);
+            var cliente2 = new Cliente("Jose", "Juan", "941444444", false);
+            var cliente3 = new Cliente("María", "DB", "941444444", false);
 
             repository.Add(cliente1);
             repository.Add(cliente2);
@@ -115,7 +115,7 @@ namespace Concesionarios.Infrastructure.Data.ADO.Tests
         [TestMethod]
         public void CustomerRepositoryUpdateClientUpdatesData()
         {
-            var cliente = new Cliente(1, "Carlos", "Tirado", "941444444", true);
+            var cliente = new Cliente("Carlos", "Tirado", "941444444", true);
             repository.Add(cliente);
 
             cliente.ChangeNombre("Jose", "Tirado");

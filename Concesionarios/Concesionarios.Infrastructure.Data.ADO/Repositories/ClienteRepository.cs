@@ -33,7 +33,7 @@ namespace Concesionarios.Infrastructure.Data.ADO.Repositories
                     command.Parameters.AddWithValue("@vip", entity.Vip);
 
                     int id = (int)command.ExecuteScalar();
-                    entity.Id = id;
+                    entity.ChangeCurrentIdentity(id);
                 }
             }
         }
@@ -101,12 +101,14 @@ namespace Concesionarios.Infrastructure.Data.ADO.Repositories
 
         protected override Cliente Map(IDataRecord record)
         {
-            return new Cliente(
-                (int)record["Id"],
+            var cliente =  new Cliente(
                 (string)record["Nombre"],
                 (string)record["Apellidos"],
                 (string)record["Telefono"],
                 (bool)record["Vip"]);
+
+            cliente.ChangeCurrentIdentity((int)record["Id"]);
+            return cliente;
         }
     }
 }

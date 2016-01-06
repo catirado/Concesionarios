@@ -21,7 +21,6 @@ namespace Concesionarios.Domain
         private Presupuesto() { }
 
         public Presupuesto(
-            int id,
             Cliente cliente, 
             Vehiculo vehiculo, 
             decimal importe, 
@@ -33,7 +32,6 @@ namespace Concesionarios.Domain
             Ensure.Argument.IsNot(cliente.Id == 0, Messages.PrespuestoClienteMustHaveValidId);
             Ensure.That<ArgumentException>(importe > 0, Messages.PresupuestoImporteGreatherThanZero);
 
-            this.Id = id;
             this.Cliente = cliente;
             this.Vehiculo = vehiculo;
             this.Importe = importe;
