@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Concesionarios.Services.Exceptions
+namespace Concesionarios.Services.DTO
 {
-    public class ElementNotFoundException : ConcesionariosException
+    public class PresupuestoListDTO
     {
 
     }

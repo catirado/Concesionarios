@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Concesionarios.Services.DTO
 {
-    public class ActualizarDatosDTO
+    public class ClienteListDTO
     {
         public int Id { get; set; }
         public string Nombre { get; set; }

@@ -1,4 +1,5 @@
 ﻿using Concesionarios.Domain;
+using Concesionarios.Services.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,19 @@ namespace Concesionarios.Services.Contracts
     //añadir coches, presupuestos, asi separamos de servicio postventa tmb a clientes
     public interface IVentasService
     {
-        void AddPresupuesto(Presupuesto presupuesto);
+        VehiculoDTO BuscarVehiculo(int id);
+        VehiculoDTO AnyadirVehiculo(VehiculoDTO vehiculo);
+        void ModificarDatosVehiculo(VehiculoDTO vehiculo);
+        void EliminarVehiculo(int id);
+        IList<VehiculoListDTO> ListadoVehiculos();
 
+        PresupuestoDTO BuscarPrespuestoPorId(int id);
+        PresupuestoDTO CrearPresupuesto(PresupuestoDTO presupuesto);
+        PresupuestoDTO ActualizarPrespuesto(PresupuestoDTO presupuesto);
+        void BorrarPresupuesto(PresupuestoDTO presupuesto);
+        IList<PresupuestoListDTO> ListadoPresupuestos();
+
+        IList<PresupuestoListDTO> BuscarPrespuestosPorVehiculo(int vehiculoId);
+        IList<PresupuestoListDTO> BuscarPrespuestosPorCliente(int clienteId);
     }
 }

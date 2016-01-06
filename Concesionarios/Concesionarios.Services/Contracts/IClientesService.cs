@@ -9,10 +9,10 @@ namespace Concesionarios.Services.Contracts
 {
     public interface IClientesService
     {
+        ClienteDTO BuscarCliente(int id);
         ClienteDTO AltaCliente(ClienteDTO cliente);
-        void BajaCliente(ClienteDTO cliente);
-        ActualizarDatosDTO ActualizarDatosCliente(ActualizarDatosDTO cliente);
-        IList<ClienteDTO> ListadoClientes();
-
+        void ActualizarDatosCliente(ClienteDTO cliente);
+        void BajaCliente(int id);
+        IList<ClienteListDTO> ListadoClientes();
     }
 }

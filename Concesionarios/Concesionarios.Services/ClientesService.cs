@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
+using Concesionarios.Services.Exceptions;
 
 namespace Concesionarios.Services
 {
@@ -25,6 +26,15 @@ namespace Concesionarios.Services
 
             _unitOfWorkFactory = unitOfWorkFactory;
             _clienteRepository = clienteRepository;
+        }
+
+        public ClienteDTO BuscarCliente(int id)
+        {
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                var cliente = _clienteRepository.Get(id);
+                return null;
+            }
         }
 
         public ClienteDTO AltaCliente(ClienteDTO clienteDTO)
@@ -46,16 +56,16 @@ namespace Concesionarios.Services
             }
         }
 
-        public void BajaCliente(ClienteDTO cliente)
+        public void BajaCliente(int id)
         {
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
-                _clienteRepository.Remove(new Cliente(0, "","","",true));
+                _clienteRepository.Remove(new Cliente(id, "","","",true));
                 unitOfWork.Commit();
             }
         }
 
-        public ActualizarDatosDTO ActualizarDatosCliente(ActualizarDatosDTO clienteDTO)
+        public void ActualizarDatosCliente(ClienteDTO clienteDTO)
         {
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
@@ -71,15 +81,14 @@ namespace Concesionarios.Services
                     _clienteRepository.Update(cliente);
                     unitOfWork.Commit();
                 }
-
-                return clienteDTO;
             }
         }
 
-        public IList<ClienteDTO> ListadoClientes()
+        public IList<ClienteListDTO> ListadoClientes()
         {
             return null;
             //return _clienteRepository.GetAll();
         }
+
     }
 }

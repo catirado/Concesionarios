@@ -10,6 +10,11 @@ namespace Concesionarios.Services.Tests.Services
     [TestClass]
     public class ClientesServiceTests
     {
+        public ClientesServiceTests()
+        {
+
+        }
+
 
     }
 }

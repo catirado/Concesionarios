@@ -39,10 +39,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActualizarDatosCommand.cs" />
     <Compile Include="ClienteDTO.cs" />
+    <Compile Include="ClienteListDTO.cs" />
+    <Compile Include="PresupuestoDTO.cs" />
+    <Compile Include="PresupuestoListDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VehiculoDTO.cs" />
+    <Compile Include="VehiculoListDTO.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Mappers\" />

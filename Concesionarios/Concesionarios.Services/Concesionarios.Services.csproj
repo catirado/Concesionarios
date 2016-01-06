@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="ClientesService.cs" />
     <Compile Include="Exceptions\ConcesionariosException.cs" />
-    <Compile Include="Exceptions\ElementNotFoundException.cs" />
     <Compile Include="Contracts\IClientesService.cs" />
     <Compile Include="Contracts\IVentasService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
