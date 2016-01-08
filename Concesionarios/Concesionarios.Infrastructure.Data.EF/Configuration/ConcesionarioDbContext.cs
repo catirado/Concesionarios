@@ -1,4 +1,5 @@
 ﻿using Concesionarios.Domain;
+using Concesionarios.Framework.Domain;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -11,22 +12,29 @@ namespace Concesionarios.Infrastructure.Data.EF.Configuration
 {
     public class ConcesionarioDbContext : DbContext
     {
-        public DbSet<Presupuesto> Presupuestos { get; set; }
-        public DbSet<Cliente> Clientes { get; set; }
-        public DbSet<Vehiculo> Vehiculos { get; set; }
-
-        public ConcesionarioDbContext()
-            : base("connectionString") //TODO: improve this
+        public ConcesionarioDbContext() : base("connectionString") //TODO: improve this
 		{
 
         }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
-			base.OnModelCreating(modelBuilder);
-			// Overrides for the convention-based mappings.
-			// We're assuming that all our fluent mappings are declared in this assembly.
+            ConfigureModel(modelBuilder);
 			modelBuilder.Configurations.AddFromAssembly(Assembly.GetAssembly(typeof(ConcesionarioDbContext)));
+            base.OnModelCreating(modelBuilder);
 		}
+
+        private void ConfigureModel(DbModelBuilder modelBuilder)
+        {
+            var entityMethod = typeof(DbModelBuilder).GetMethod("Entity");
+
+            var entityTypes = Assembly.GetAssembly(typeof(Vehiculo)).GetTypes()
+                .Where(x => x.IsSubclassOf(typeof(Entity)) && !x.IsAbstract);
+
+            foreach (var type in entityTypes)
+            {
+                entityMethod.MakeGenericMethod(type).Invoke(modelBuilder, new object[] { });
+            }
+        }
     }
 }

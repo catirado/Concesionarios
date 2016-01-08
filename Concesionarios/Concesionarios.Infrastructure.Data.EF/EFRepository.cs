@@ -58,6 +58,7 @@ namespace Concesionarios.Infrastructure.Data.EF
 
         public void Remove(TEntity entity)
         {
+            DbSet.Attach(entity);
             DbSet.Remove(entity);
         }
 
