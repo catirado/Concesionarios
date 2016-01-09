@@ -8,7 +8,10 @@ namespace Concesionarios.Services.DTO
 {
     public class PresupuestoDTO
     {
-
-        //las propiedas de la info de cliente y vehiculo
+        public int Id { get; set; }
+        public PresupuestoEstadoDTO Estado { get; set; }
+        public decimal Importe { get; set; }
+        public ClienteDTO Cliente { get; set; }
+        public VehiculoDTO Vehiculo { get; set; }
     }
 }

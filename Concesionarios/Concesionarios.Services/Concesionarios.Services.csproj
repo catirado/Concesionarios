@@ -56,12 +56,18 @@
       <Project>{ae06aa0d-b016-4f5d-98d5-30b8591aec43}</Project>
       <Name>Concesionarios.Framework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Concesionarios.Infrastructure.Crosscutting\Concesionarios.Infrastructure.Crosscutting.csproj">
+      <Project>{c136e405-cadd-4a0f-bf04-86259e176820}</Project>
+      <Name>Concesionarios.Infrastructure.Crosscutting</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Concesionarios.Services.DTO\Concesionarios.Services.DTO.csproj">
       <Project>{e8e22963-e90e-42c0-9a74-1335ca65b71a}</Project>
       <Name>Concesionarios.Services.DTO</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

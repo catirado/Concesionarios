@@ -42,6 +42,7 @@
     <Compile Include="ClienteDTO.cs" />
     <Compile Include="ClienteListDTO.cs" />
     <Compile Include="PresupuestoDTO.cs" />
+    <Compile Include="PresupuestoEstadoDTO.cs" />
     <Compile Include="PresupuestoListDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VehiculoDTO.cs" />

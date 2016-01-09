@@ -54,7 +54,7 @@ namespace Concesionarios.Services
             throw new NotImplementedException();
         }
 
-        public PresupuestoDTO BuscarPrespuestoPorId(int id)
+        public PresupuestoDTO BuscarPrespuesto(int id)
         {
             throw new NotImplementedException();
         }

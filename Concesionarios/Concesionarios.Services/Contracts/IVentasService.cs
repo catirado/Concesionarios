@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace Concesionarios.Services.Contracts
 {
-    //añadir coches, presupuestos, asi separamos de servicio postventa tmb a clientes
     public interface IVentasService
     {
         VehiculoDTO BuscarVehiculo(int id);
@@ -17,7 +16,7 @@ namespace Concesionarios.Services.Contracts
         void EliminarVehiculo(int id);
         IList<VehiculoListDTO> ListadoVehiculos();
 
-        PresupuestoDTO BuscarPrespuestoPorId(int id);
+        PresupuestoDTO BuscarPrespuesto(int id);
         PresupuestoDTO CrearPresupuesto(PresupuestoDTO presupuesto);
         PresupuestoDTO ActualizarPrespuesto(PresupuestoDTO presupuesto);
         void BorrarPresupuesto(PresupuestoDTO presupuesto);
