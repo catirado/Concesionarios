@@ -54,10 +54,12 @@
     <Compile Include="Helpers\Implementations\AmbientContextSuppressor.cs" />
     <Compile Include="Helpers\Implementations\AmbientDbContextLocator.cs" />
     <Compile Include="Helpers\Implementations\DbContextCollection.cs" />
+    <Compile Include="Helpers\Implementations\DbContextScopeFactory.cs" />
     <Compile Include="Helpers\Implementations\DbContextScopeOption.cs" />
     <Compile Include="Helpers\Interfaces\IAmbientDbContextLocator.cs" />
     <Compile Include="Helpers\Interfaces\IDbContextCollection.cs" />
     <Compile Include="Helpers\Interfaces\IDbContextFactory.cs" />
+    <Compile Include="Helpers\Interfaces\IDbContextScopeFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ClienteRepository.cs" />
     <Compile Include="Repositories\PresupuestoRepository.cs" />

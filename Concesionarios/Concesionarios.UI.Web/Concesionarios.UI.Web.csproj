@@ -39,11 +39,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.corelibrary.1.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah.Mvc">
+      <HintPath>..\packages\Elmah.Mvc.2.1.2\lib\net40\Elmah.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.Ado">
+      <HintPath>..\packages\Glimpse.Ado.1.7.3\lib\net45\Glimpse.Ado.dll</HintPath>
+    </Reference>
     <Reference Include="Glimpse.AspNet">
       <HintPath>..\packages\Glimpse.AspNet.1.9.2\lib\net45\Glimpse.AspNet.dll</HintPath>
     </Reference>
     <Reference Include="Glimpse.Core">
       <HintPath>..\packages\Glimpse.1.8.6\lib\net45\Glimpse.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.EF6">
+      <HintPath>..\packages\Glimpse.EF6.1.6.5\lib\net45\Glimpse.EF6.dll</HintPath>
     </Reference>
     <Reference Include="Glimpse.Mvc5">
       <HintPath>..\packages\Glimpse.Mvc5.1.5.3\lib\net45\Glimpse.Mvc5.dll</HintPath>
@@ -54,6 +66,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="SimpleInjector">
       <HintPath>..\packages\SimpleInjector.3.1.2\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector.Extensions.LifetimeScoping">
+      <HintPath>..\packages\SimpleInjector.Extensions.LifetimeScoping.3.1.2\lib\net40-client\SimpleInjector.Extensions.LifetimeScoping.dll</HintPath>
     </Reference>
     <Reference Include="SimpleInjector.Integration.Web">
       <HintPath>..\packages\SimpleInjector.Integration.Web.3.1.2\lib\net40\SimpleInjector.Integration.Web.dll</HintPath>
@@ -179,9 +194,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -258,6 +271,28 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Concesionarios.Domain\Concesionarios.Domain.csproj">
+      <Project>{1afe3b4c-757b-4f9e-becd-8d00f2371f94}</Project>
+      <Name>Concesionarios.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Concesionarios.Framework\Concesionarios.Framework.csproj">
+      <Project>{ae06aa0d-b016-4f5d-98d5-30b8591aec43}</Project>
+      <Name>Concesionarios.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Concesionarios.Infrastructure.Data.EF\Concesionarios.Infrastructure.Data.EF.csproj">
+      <Project>{5883f91a-8ca2-45f7-b94a-f6714bb684ec}</Project>
+      <Name>Concesionarios.Infrastructure.Data.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Concesionarios.Services.DTO\Concesionarios.Services.DTO.csproj">
+      <Project>{e8e22963-e90e-42c0-9a74-1335ca65b71a}</Project>
+      <Name>Concesionarios.Services.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Concesionarios.Services\Concesionarios.Services.csproj">
+      <Project>{085ed1ea-1b1d-45d2-b33c-43385967122f}</Project>
+      <Name>Concesionarios.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

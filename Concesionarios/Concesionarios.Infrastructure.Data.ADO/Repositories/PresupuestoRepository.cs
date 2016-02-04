@@ -3,6 +3,7 @@ using Concesionarios.Domain.Repositories;
 using Concesionarios.Framework.Database;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,11 +49,15 @@ namespace Concesionarios.Infrastructure.Data.ADO.Repositories
             throw new NotImplementedException();
         }
 
-        protected override Presupuesto Map(System.Data.IDataRecord record)
+        protected override Presupuesto Map(IDataRecord record)
         {
-            throw new NotImplementedException();
+            /*  return new Presupuesto(
+               (int)record["Id"],
+               (string)record["Nombre"],
+               (string)record["Apellidos"],
+               (string)record["Telefono"],
+               (bool)record["Vip"]);*/
+            return null;
         }
-
-        
     }
 }

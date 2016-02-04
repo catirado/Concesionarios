@@ -13,6 +13,7 @@ namespace Concesionarios.Infrastructure.Data.EF
 {
     //http://stackoverflow.com/questions/10926873/unitofwork-with-unity-and-entity-framework
     //http://blog.longle.net/2013/05/11/genericizing-the-unit-of-work-pattern-repository-pattern-with-entity-framework-in-mvc/
+    
     public class EFRepository<TEntity, DbContextScope>: IRepository<TEntity>  
         where DbContextScope : DbContext
         where TEntity : Entity

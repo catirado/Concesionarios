@@ -4,6 +4,7 @@ using Concesionarios.Framework.Domain;
 using Concesionarios.Framework.Utils;
 using Concesionarios.Services.Contracts;
 using Concesionarios.Services.DTO;
+using ExpressMapper.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,7 +52,7 @@ namespace Concesionarios.Services
                 _clienteRepository.Add(cliente);
                 unitOfWork.Commit();
 
-                return clienteDTO;
+                return cliente.Map<Cliente,ClienteDTO>();
             }
         }
 
@@ -85,8 +86,10 @@ namespace Concesionarios.Services
 
         public IList<ClienteListDTO> ListadoClientes()
         {
-            return null;
-            //return _clienteRepository.GetAll();
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                return _clienteRepository.GetAll().Map<IEnumerable<Cliente>, IList<ClienteListDTO>>();
+            }
         }
 
     }

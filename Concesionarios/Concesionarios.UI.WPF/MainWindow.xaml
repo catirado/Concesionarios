@@ -1,8 +1,13 @@
-﻿<Window x:Class="Concesionarios.UI.WPF.MainWindow"
+﻿<syncfusion:ChromelessWindow x:Class="Concesionarios.UI.WPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        syncfusion:SkinStorage.VisualStyle="Blend"
+        Title="Concesionarios App" Height="650" Width="1024">
     <Grid>
-        
+        <DockPanel HorizontalAlignment="Left" Height="669" LastChildFill="False" VerticalAlignment="Top" Width="220" Background="#FF424242">
+            <Button Content="Vehículos" HorizontalAlignment="Left" Margin="23,57,0,0" VerticalAlignment="Top" Width="172" Height="52" FontSize="18"/>
+        </DockPanel>
+
     </Grid>
-</Window>
+</syncfusion:ChromelessWindow>
