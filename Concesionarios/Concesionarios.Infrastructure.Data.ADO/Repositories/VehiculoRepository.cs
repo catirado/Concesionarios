@@ -98,7 +98,7 @@ namespace Concesionarios.Infrastructure.Data.ADO.Repositories
             var vehiculo = new Vehiculo(
                (string)record["Marca"],
                (string)record["Modelo"],
-               (int)record["Potenica"]);
+               (int)record["Potencia"]);
 
             vehiculo.ChangeCurrentIdentity((int)record["Id"]);
             return vehiculo;
