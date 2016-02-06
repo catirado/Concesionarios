@@ -14,12 +14,12 @@ namespace Concesionarios.Infrastructure.Data.ADO.Repositories
     {
         public PresupuestoRepository(IDBConfiguration configuration) : base(configuration) { }
 
-        public IList<Presupuesto> FindAllPresupuestosForCliente(Cliente cliente)
+        public IList<Presupuesto> FindAllPresupuestosByCliente(Cliente cliente)
         {
             throw new NotImplementedException();
         }
 
-        public IList<Presupuesto> FindAllPresupuestosForVehiculo(Vehiculo vehiculo)
+        public IList<Presupuesto> FindAllPresupuestosByVehiculo(Vehiculo vehiculo)
         {
             throw new NotImplementedException();
         }
