@@ -115,6 +115,7 @@ namespace Concesionarios.Infrastructure.Data.EF.Tests
             {
                 var cliente = new Cliente("Carlos", "Tirado", "941444444", true);
                 repository.Add(cliente);
+                uow.Commit();
 
                 var recoverClient = repository.Get(cliente.Id);
                 Assert.IsNotNull(recoverClient);
