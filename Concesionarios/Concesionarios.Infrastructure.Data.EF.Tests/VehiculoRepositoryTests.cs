@@ -41,7 +41,6 @@ namespace Concesionarios.Infrastructure.Data.EF.Tests
             this.scope.Dispose();
         }
 
-
         [TestMethod]
         public void VehiculoRepositoryAddVehiculoReturnsId()
         {
@@ -69,7 +68,8 @@ namespace Concesionarios.Infrastructure.Data.EF.Tests
         }
 
         [TestMethod]
-        public void VehiculoRepositoryRemoveClientThatNotExistsDoNothing()
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void VehiculoRepositoryRemoveClientThatNotExistsThrowsException()
         {
             using (var uow = uowFactory.Create())
             {

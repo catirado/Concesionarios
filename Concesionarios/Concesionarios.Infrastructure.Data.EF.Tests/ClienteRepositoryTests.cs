@@ -68,7 +68,8 @@ namespace Concesionarios.Infrastructure.Data.EF.Tests
         }
 
         [TestMethod]
-        public void CustomerRepositoryRemoveClientThatNotExistsDoNothing()
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void CustomerRepositoryRemoveClientThatNotExistsThrowsException()
         {
             using (var uow = uowFactory.Create())
             {
