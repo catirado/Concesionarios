@@ -19,7 +19,7 @@ namespace Concesionarios.Infrastructure.Data.EF.Configuration
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
-            ConfigureModel(modelBuilder);
+            //ConfigureModel(modelBuilder);
 			modelBuilder.Configurations.AddFromAssembly(Assembly.GetAssembly(typeof(ConcesionarioDbContext)));
             base.OnModelCreating(modelBuilder);
 		}
