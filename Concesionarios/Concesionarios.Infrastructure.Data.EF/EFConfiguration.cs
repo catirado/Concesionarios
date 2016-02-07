@@ -11,12 +11,12 @@ namespace Concesionarios.Infrastructure.Data.EF
     {
         public void Setup()
         {
-            throw new NotImplementedException();
+
         }
 
         public string ConnectionString
         {
-            get { throw new NotImplementedException(); }
+            get { return "connectionString" ; }
         }
     }
 }

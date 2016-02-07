@@ -159,10 +159,10 @@ namespace Concesionarios.Infrastructure.Data.EF.Tests
                 repository.Update(vehiculo);
                 uow.Commit();
 
-                var recoverClient = repository.Get(vehiculo.Id);
+                var recoverVehiculo = repository.Get(vehiculo.Id);
 
-                Assert.IsNotNull(recoverClient);
-                Assert.AreEqual(250, vehiculo.Potencia);
+                Assert.IsNotNull(recoverVehiculo);
+                Assert.AreEqual(250, recoverVehiculo.Potencia);
             }
         }
 

@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\ConcesionarioDbContext.cs" />
+    <Compile Include="Configuration\ForeignKeyNamingConvention.cs" />
     <Compile Include="EFConfiguration.cs" />
     <Compile Include="EFRepository.cs" />
     <Compile Include="EFUnitOfWork.cs" />

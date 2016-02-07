@@ -10,7 +10,7 @@ namespace Concesionarios.Domain
 {
     public class Presupuesto : Entity
     {
-        public enum PresupuestoEstado { Abierto, Aceptado, Cerrado}
+        public enum PresupuestoEstado { Abierto = 0, Aceptado = 1, Cerrado = 2}
 
         public PresupuestoEstado Estado { get; private set; }
         public decimal Importe { get; private set; }

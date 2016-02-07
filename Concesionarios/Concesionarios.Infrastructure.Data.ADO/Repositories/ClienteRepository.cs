@@ -61,11 +61,12 @@ namespace Concesionarios.Infrastructure.Data.ADO.Repositories
                 using (var command = connection.CreateCommand())
                 {
                     command.CommandText = "UPDATE Clientes SET Nombre = @nombre, Apellidos = @apellidos,  "
-                                          + "Telefono = @telefono, Vip=@vip";
+                                          + "Telefono = @telefono, Vip=@vip WHERE Id = @id";
                     command.Parameters.AddWithValue("@nombre", entity.Nombre);
                     command.Parameters.AddWithValue("@apellidos", entity.Apellidos);
                     command.Parameters.AddWithValue("@telefono", entity.Telefono);
                     command.Parameters.AddWithValue("@vip", entity.Vip);
+                    command.Parameters.AddWithValue("@id", entity.Id);
                     command.ExecuteNonQuery();
                 }
             }

@@ -20,6 +20,7 @@ namespace Concesionarios.Infrastructure.Data.EF.Configuration
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
             //ConfigureModel(modelBuilder);
+            modelBuilder.Conventions.Add(new ForeignKeyNamingConvention());
 			modelBuilder.Configurations.AddFromAssembly(Assembly.GetAssembly(typeof(ConcesionarioDbContext)));
             base.OnModelCreating(modelBuilder);
 		}

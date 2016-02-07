@@ -5,8 +5,10 @@
         syncfusion:SkinStorage.VisualStyle="Blend"
         Title="Concesionarios App" Height="650" Width="1024">
     <Grid>
-        <DockPanel HorizontalAlignment="Left" Height="669" LastChildFill="False" VerticalAlignment="Top" Width="220" Background="#FF424242">
+        <DockPanel HorizontalAlignment="Left" Height="669" VerticalAlignment="Top" Width="220" Background="#FF424242" >
             <Button Content="Vehículos" HorizontalAlignment="Left" Margin="23,57,0,0" VerticalAlignment="Top" Width="172" Height="52" FontSize="18"/>
+            <Button Content="Clientes" HorizontalAlignment="Left" Margin="23,57,0,0" VerticalAlignment="Top" Width="172" Height="52" FontSize="18"/>
+            <Button Content="Presupuestos" HorizontalAlignment="Left" Margin="23,57,0,0" VerticalAlignment="Top" Width="172" Height="52" FontSize="18"/>
         </DockPanel>
 
     </Grid>

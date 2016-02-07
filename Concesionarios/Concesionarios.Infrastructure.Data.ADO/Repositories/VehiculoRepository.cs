@@ -57,10 +57,11 @@ namespace Concesionarios.Infrastructure.Data.ADO.Repositories
                 using (var command = connection.CreateCommand())
                 {
                     command.CommandText = "UPDATE Vehiculos SET Marca = @marca, Modelo = @modelo,  "
-                                          + "Potencia = @potencia";
+                                          + "Potencia = @potencia WHERE Id = @id";
                     command.Parameters.AddWithValue("@marca", entity.Marca);
                     command.Parameters.AddWithValue("@modelo", entity.Modelo);
                     command.Parameters.AddWithValue("@potencia", entity.Potencia);
+                    command.Parameters.AddWithValue("@id", entity.Id);
                     command.ExecuteNonQuery();
                 }
             }

@@ -21,6 +21,7 @@ namespace Concesionarios.UI.WPF
     /// </summary>
     public partial class MainWindow : ChromelessWindow
     {
+        //http://www.codeproject.com/Articles/332615/WPF-Master-Details-MVVM-Application
         public MainWindow()
         {
             InitializeComponent();

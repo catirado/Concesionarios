@@ -20,12 +20,12 @@ namespace Concesionarios.Infrastructure.Data.EF.Repositories
 
         public IList<Presupuesto> FindAllPresupuestosByCliente(Cliente cliente)
         {
-            return base.DbSet.Where(x => x.Cliente == cliente).ToList();
+            return base.DbSet.Where(x => x.Cliente.Id == cliente.Id).ToList();
         }
 
         public IList<Presupuesto> FindAllPresupuestosByVehiculo(Vehiculo vehiculo)
         {
-            return base.DbSet.Where(x => x.Vehiculo == vehiculo).ToList();
+            return base.DbSet.Where(x => x.Vehiculo.Id == vehiculo.Id).ToList();
         }
     }
 }

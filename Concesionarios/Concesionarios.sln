@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Concesionarios.API.REST", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Concesionarios.API.REST.Tests", "Concesionarios.API.REST.Tests\Concesionarios.API.REST.Tests.csproj", "{7E722A96-4B96-4200-86EF-A3E65EFC97DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Concesionarios.UI.WPF.Tests", "Concesionarios.UI.WPF.Tests\Concesionarios.UI.WPF.Tests.csproj", "{C5250A74-6BFC-4C00-8777-F09973649862}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -119,6 +121,10 @@ Global
 		{7E722A96-4B96-4200-86EF-A3E65EFC97DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E722A96-4B96-4200-86EF-A3E65EFC97DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E722A96-4B96-4200-86EF-A3E65EFC97DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5250A74-6BFC-4C00-8777-F09973649862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5250A74-6BFC-4C00-8777-F09973649862}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5250A74-6BFC-4C00-8777-F09973649862}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5250A74-6BFC-4C00-8777-F09973649862}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -141,5 +147,6 @@ Global
 		{714F8143-B64A-4C8E-A773-F8DE86D1E63C} = {1784645C-DAF1-456B-8CEE-3DD8A462891C}
 		{8077AEA0-353D-48CE-B546-A0AF0CD39105} = {1784645C-DAF1-456B-8CEE-3DD8A462891C}
 		{7E722A96-4B96-4200-86EF-A3E65EFC97DD} = {1784645C-DAF1-456B-8CEE-3DD8A462891C}
+		{C5250A74-6BFC-4C00-8777-F09973649862} = {1784645C-DAF1-456B-8CEE-3DD8A462891C}
 	EndGlobalSection
 EndGlobal

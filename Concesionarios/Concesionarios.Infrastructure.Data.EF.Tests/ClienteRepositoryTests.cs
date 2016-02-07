@@ -164,7 +164,7 @@ namespace Concesionarios.Infrastructure.Data.EF.Tests
                 var recoverClient = repository.Get(cliente.Id);
 
                 Assert.IsNotNull(recoverClient);
-                Assert.AreEqual("Jose", cliente.Nombre);
+                Assert.AreEqual("Jose", recoverClient.Nombre);
             }
         }
 
