@@ -18,7 +18,7 @@ namespace Concesionarios.Domain
         public bool Vip { get; private set; }
         
         //for EF
-        private Cliente() { }
+        public Cliente() { }
 
         public Cliente(
             string nombre, 

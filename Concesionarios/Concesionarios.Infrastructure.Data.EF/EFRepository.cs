@@ -65,7 +65,7 @@ namespace Concesionarios.Infrastructure.Data.EF
         public void Update(TEntity entity)
         {
             DbSet.Attach(entity);
-            //DbContext.Entry(entity).State = EntityState.Modified;
+            DbContext.Entry(entity).State = EntityState.Modified;
         }
 
         public TEntity Get(int id)

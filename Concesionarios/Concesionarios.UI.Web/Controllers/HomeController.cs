@@ -9,17 +9,14 @@ namespace Concesionarios.UI.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IClientesService _clientesService;
-
-        public HomeController(IClientesService clientesService)
+        public HomeController()
         {
-            _clientesService = clientesService;
+
         }
 
         public ActionResult Index()
         {
-            var clientes = _clientesService.ListadoClientes();
-            return View(clientes);
+            return View();
         }
 
         public ActionResult About()

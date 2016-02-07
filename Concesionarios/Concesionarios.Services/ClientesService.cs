@@ -94,7 +94,7 @@ namespace Concesionarios.Services
         {
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
-                return _clienteRepository.GetAll().Map<IEnumerable<Cliente>, IList<ClienteListDTO>>();
+                return _clienteRepository.GetAll().Map<IEnumerable<Cliente>, IEnumerable<ClienteListDTO>>().ToList();
             }
         }
 

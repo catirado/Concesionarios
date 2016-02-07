@@ -31,7 +31,6 @@ namespace Concesionarios.UI.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-
             var ambientDbLocater = new AmbientDbContextLocator();
 
             var container = new Container();
@@ -44,7 +43,6 @@ namespace Concesionarios.UI.Web
                 () => new EFUnitOfWorkFactory(System.Data.IsolationLevel.ReadUncommitted));
 
             container.Register<IClienteRepository, ClienteRepository>();
-
             container.Register<IClientesService, ClientesService>();
 
             container.RegisterMvcControllers(Assembly.GetExecutingAssembly());

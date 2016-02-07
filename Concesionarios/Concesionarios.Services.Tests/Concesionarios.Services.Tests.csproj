@@ -38,11 +38,9 @@
     <Reference Include="Moq">
       <HintPath>..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
     </Reference>
-    <Reference Include="NSubstitute">
+    <Reference Include="NSubstitute, Version=1.9.2.0, Culture=neutral, PublicKeyToken=92dd2e9066daa5ca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NSubstitute.1.9.2.0\lib\net45\NSubstitute.dll</HintPath>
-    </Reference>
-    <Reference Include="Shouldly">
-      <HintPath>..\packages\Shouldly.2.6.0\lib\net40\Shouldly.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
@@ -67,6 +65,14 @@
     <Folder Include="Mappers\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Concesionarios.Domain\Concesionarios.Domain.csproj">
+      <Project>{1afe3b4c-757b-4f9e-becd-8d00f2371f94}</Project>
+      <Name>Concesionarios.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Concesionarios.Framework\Concesionarios.Framework.csproj">
+      <Project>{ae06aa0d-b016-4f5d-98d5-30b8591aec43}</Project>
+      <Name>Concesionarios.Framework</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Concesionarios.Services.DTO\Concesionarios.Services.DTO.csproj">
       <Project>{e8e22963-e90e-42c0-9a74-1335ca65b71a}</Project>
       <Name>Concesionarios.Services.DTO</Name>
