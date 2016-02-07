@@ -47,6 +47,7 @@
     <Compile Include="Exceptions\ConcesionariosException.cs" />
     <Compile Include="Contracts\IClientesService.cs" />
     <Compile Include="Contracts\IVentasService.cs" />
+    <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VentasService.cs" />
   </ItemGroup>

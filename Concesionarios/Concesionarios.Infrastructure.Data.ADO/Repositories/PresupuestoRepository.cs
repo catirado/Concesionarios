@@ -99,7 +99,7 @@ namespace Concesionarios.Infrastructure.Data.ADO.Repositories
             }
         }
 
-        public IList<Presupuesto> FindAllPresupuestosByCliente(Cliente cliente)
+        public IList<Presupuesto> FindAllPresupuestosByCliente(int clienteId)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -108,13 +108,13 @@ namespace Concesionarios.Infrastructure.Data.ADO.Repositories
                 {
                     command.CommandText = @"SELECT * FROM Presupuestos p LEFT JOIN Clientes c ON p.ClienteId = c.Id "
                                            + "LEFT JOIN Vehiculos v ON p.VehiculoId = v.Id WHERE ClienteId = @clienteId";
-                    command.Parameters.AddWithValue("@clienteId", cliente.Id);
+                    command.Parameters.AddWithValue("@clienteId", clienteId);
                     return ToList(command).ToList();
                 }
             }
         }
 
-        public IList<Presupuesto> FindAllPresupuestosByVehiculo(Vehiculo vehiculo)
+        public IList<Presupuesto> FindAllPresupuestosByVehiculo(int vehiculoId)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -123,7 +123,7 @@ namespace Concesionarios.Infrastructure.Data.ADO.Repositories
                 {
                     command.CommandText = @"SELECT * FROM Presupuestos p LEFT JOIN Clientes c ON p.ClienteId = c.Id "
                                            + "LEFT JOIN Vehiculos v ON p.VehiculoId = v.Id WHERE VehiculoId = @vehiculoId";
-                    command.Parameters.AddWithValue("@vehiculoId", vehiculo.Id);
+                    command.Parameters.AddWithValue("@vehiculoId", vehiculoId);
                     return ToList(command).ToList();
                 }
             }

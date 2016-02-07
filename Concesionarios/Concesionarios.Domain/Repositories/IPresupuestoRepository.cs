@@ -9,7 +9,7 @@ namespace Concesionarios.Domain.Repositories
 {
     public interface IPresupuestoRepository : IRepository<Presupuesto>
     {
-        IList<Presupuesto> FindAllPresupuestosByCliente(Cliente cliente);
-        IList<Presupuesto> FindAllPresupuestosByVehiculo(Vehiculo vehiculo);
+        IList<Presupuesto> FindAllPresupuestosByCliente(int clienteId);
+        IList<Presupuesto> FindAllPresupuestosByVehiculo(int vehiculoId);
     }
 }

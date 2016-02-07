@@ -202,7 +202,7 @@ namespace Concesionarios.Infrastructure.Data.EF.Tests
                 repository.Add(presupuesto3);
                 uow.Commit();
 
-                var items = repository.FindAllPresupuestosByVehiculo(vehiculo);
+                var items = repository.FindAllPresupuestosByVehiculo(vehiculo.Id);
 
                 Assert.IsNotNull(items);
                 Assert.AreEqual(2, items.Count());
@@ -227,7 +227,7 @@ namespace Concesionarios.Infrastructure.Data.EF.Tests
                 repository.Add(presupuesto3);
                 uow.Commit();
 
-                var items = repository.FindAllPresupuestosByCliente(cliente);
+                var items = repository.FindAllPresupuestosByCliente(cliente.Id);
 
                 Assert.IsNotNull(items);
                 Assert.AreEqual(2, items.Count());

@@ -18,14 +18,14 @@ namespace Concesionarios.Infrastructure.Data.EF.Repositories
 
         }
 
-        public IList<Presupuesto> FindAllPresupuestosByCliente(Cliente cliente)
+        public IList<Presupuesto> FindAllPresupuestosByCliente(int clienteId)
         {
-            return base.DbSet.Where(x => x.Cliente.Id == cliente.Id).ToList();
+            return base.DbSet.Where(x => x.Cliente.Id == clienteId).ToList();
         }
 
-        public IList<Presupuesto> FindAllPresupuestosByVehiculo(Vehiculo vehiculo)
+        public IList<Presupuesto> FindAllPresupuestosByVehiculo(int vehiculoId)
         {
-            return base.DbSet.Where(x => x.Vehiculo.Id == vehiculo.Id).ToList();
+            return base.DbSet.Where(x => x.Vehiculo.Id == vehiculoId).ToList();
         }
     }
 }

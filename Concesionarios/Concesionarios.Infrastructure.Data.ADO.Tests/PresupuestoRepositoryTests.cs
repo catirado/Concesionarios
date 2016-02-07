@@ -165,7 +165,7 @@ namespace Concesionarios.Infrastructure.Data.ADO.Tests
             repository.Add(presupuesto2);
             repository.Add(presupuesto3);
 
-            var items = repository.FindAllPresupuestosByVehiculo(vehiculo);
+            var items = repository.FindAllPresupuestosByVehiculo(vehiculo.Id);
 
             Assert.IsNotNull(items);
             Assert.AreEqual(2, items.Count());
@@ -186,7 +186,7 @@ namespace Concesionarios.Infrastructure.Data.ADO.Tests
             repository.Add(presupuesto2);
             repository.Add(presupuesto3);
 
-            var items = repository.FindAllPresupuestosByCliente(cliente);
+            var items = repository.FindAllPresupuestosByCliente(cliente.Id);
 
             Assert.IsNotNull(items);
             Assert.AreEqual(2, items.Count());

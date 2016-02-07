@@ -19,7 +19,7 @@ namespace Concesionarios.Services.Contracts
         PresupuestoDTO BuscarPrespuesto(int id);
         PresupuestoDTO CrearPresupuesto(PresupuestoDTO presupuesto);
         PresupuestoDTO ActualizarPrespuesto(PresupuestoDTO presupuesto);
-        void BorrarPresupuesto(PresupuestoDTO presupuesto);
+        void BorrarPresupuesto(int id);
         IList<PresupuestoListDTO> ListadoPresupuestos();
 
         IList<PresupuestoListDTO> BuscarPrespuestosPorVehiculo(int vehiculoId);

@@ -34,7 +34,8 @@ namespace Concesionarios.Services
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
                 var cliente = _clienteRepository.Get(id);
-                return null;
+                Ensure.NotNull<NotFoundException>(cliente, String.Format("Client with id {0} not found", id));
+                return cliente.Map<Cliente, ClienteDTO>();
             }
         }
 
@@ -60,7 +61,11 @@ namespace Concesionarios.Services
         {
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
-                _clienteRepository.Remove(null);
+                var cliente = _clienteRepository.Get(id);
+                if (cliente != null)
+                {
+                    _clienteRepository.Remove(cliente);
+                }
                 unitOfWork.Commit();
             }
         }
@@ -70,17 +75,18 @@ namespace Concesionarios.Services
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
                 Ensure.Argument.NotNull(clienteDTO, "cliente not null");
+                
                 var cliente = _clienteRepository.Get(clienteDTO.Id);
+                Ensure.NotNull<NotFoundException>(cliente, String.Format("Client with id {0} not found", clienteDTO.Id));
+                
+                cliente.ChangeNombre(clienteDTO.Nombre, clienteDTO.Apellidos);
+                cliente.ChangeTelefono(clienteDTO.Telefono);
+                cliente.SetVip(clienteDTO.Vip);
 
-                if (cliente != null)
-                {
-                    cliente.ChangeNombre(clienteDTO.Nombre, clienteDTO.Apellidos);
-                    cliente.ChangeTelefono(clienteDTO.Telefono);
-                    cliente.SetVip(clienteDTO.Vip);
+                _clienteRepository.Update(cliente);
+                unitOfWork.Commit();
 
-                    _clienteRepository.Update(cliente);
-                    unitOfWork.Commit();
-                }
+                clienteDTO = cliente.Map<Cliente, ClienteDTO>();
             }
         }
 

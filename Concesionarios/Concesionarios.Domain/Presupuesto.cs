@@ -14,6 +14,9 @@ namespace Concesionarios.Domain
 
         public PresupuestoEstado Estado { get; private set; }
         public decimal Importe { get; private set; }
+
+        public int VehiculoId { get; private set; }
+        public int ClienteId { get; private set; }
         public virtual Vehiculo Vehiculo { get; private set; }
         public virtual Cliente Cliente { get; private set; }
 
@@ -33,7 +36,9 @@ namespace Concesionarios.Domain
             Ensure.That<ArgumentException>(importe > 0, Messages.PresupuestoImporteGreatherThanZero);
 
             this.Cliente = cliente;
+            this.ClienteId = cliente.Id;
             this.Vehiculo = vehiculo;
+            this.VehiculoId = vehiculo.Id;
             this.Importe = importe;
             this.Estado = estado;
         }
